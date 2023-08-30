@@ -114,6 +114,11 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: "green",
   },
+  bottomView: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginTop: 35,
+  },
   headerView: {
     paddingLeft: 8,
     // backgroundColor: "red",
