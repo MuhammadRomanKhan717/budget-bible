@@ -23,10 +23,12 @@ const PayPeriodScreen = ({ navigation }) => {
       </View>
 
       <View style={styles.headerView}>
-        <Image
-          style={styles.headerImage}
-          source={require("../assets/eva_arrow-ios-back-fill.png")}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate("expenses")}>
+          <Image
+            style={styles.headerImage}
+            source={require("../assets/eva_arrow-ios-back-fill.png")}
+          />
+        </TouchableOpacity>
         <Text style={styles.headerText}>Pay Period</Text>
       </View>
 
@@ -118,6 +120,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     marginTop: 35,
+    paddingRight: 15,
+  },
+  bottomNext: {
+    backgroundColor: "white",
+    justifyContent: "center",
+    alignItems: "center",
+    height: 36,
+    width: 90,
+    marginTop: 45,
+    backgroundColor: "#FFD700",
+    borderRadius: 31,
+    borderWidth: 1,
+    marginLeft: 110,
   },
   headerView: {
     paddingLeft: 8,
@@ -189,13 +204,15 @@ const styles = StyleSheet.create({
     shadowRadius: 20.0,
     elevation: 24,
 
-    height: "60%",
-    paddingHorizontal: 18,
+    height: "50%",
+
     marginHorizontal: 20,
     flexDirection: "column",
     borderRadius: 10,
     paddingRight: 12,
     borderWidth: 1,
+
+    borderColor: "gray",
     justifyContent: "space-evenly",
   },
   IOText: {
