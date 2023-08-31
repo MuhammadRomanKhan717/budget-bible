@@ -17,7 +17,10 @@ const PayPeriodScreen = ({ navigation }) => {
           { position: "absolute", bottom: 50, right: 0, right: 0, zIndex: 99 },
         ]}
       >
-        <TouchableOpacity style={[styles.bottomNext]}>
+        <TouchableOpacity
+          style={[styles.bottomNext]}
+          onPress={() => navigation.navigate("allocatYourFriend")}
+        >
           <Text>Next</Text>
         </TouchableOpacity>
       </View>

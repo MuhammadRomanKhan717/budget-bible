@@ -11,6 +11,7 @@ import LoginScreen from "./LoginScreen";
 import ForgetPasswordScreen from "./ForgetPasswordScreen";
 import ExpensesFlow from "./ExpensesFlow";
 import PayPeriodScreen from "./PayPeriodScreen";
+import AllocateYourFriend from "./AllocateYourFriend";
 
 const Navigation = () => {
   return (
@@ -24,6 +25,7 @@ const Navigation = () => {
       <Stack.Screen name="login" component={LoginScreen} />
       <Stack.Screen name="expenses" component={ExpensesFlow} />
       <Stack.Screen name="payPeriod" component={PayPeriodScreen} />
+      <Stack.Screen name="allocatYourFriend" component={AllocateYourFriend} />
       <Stack.Screen name="Forget" component={ForgetPasswordScreen} />
     </Stack.Navigator>
   );
