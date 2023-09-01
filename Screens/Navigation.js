@@ -12,13 +12,25 @@ import ForgetPasswordScreen from "./ForgetPasswordScreen";
 import ExpensesFlow from "./ExpensesFlow";
 import PayPeriodScreen from "./PayPeriodScreen";
 import AllocateYourFriend from "./AllocateYourFriend";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
+const Drawer = createDrawerNavigator();
+
+function MyDrawer() {
+  return (
+    <Drawer.Navigator>
+      {/* <Drawer.Screen name="Feed" component={Feed} /> */}
+      <Drawer.Screen name="login" component={LoginScreen} />
+    </Drawer.Navigator>
+  );
+}
 const Navigation = () => {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
       initialRouteName="Onbording"
     >
+      <Stack.Screen name="Drawer" component={MyDrawer} />
       <Stack.Screen name="splash" component={SplashScreen} />
       <Stack.Screen name="Onbording" component={OnboardingScreen} />
       <Stack.Screen name="Signup" component={SignUpScreen} />
