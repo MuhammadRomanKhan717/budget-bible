@@ -12,13 +12,13 @@ import "react-native-gesture-handler";
 export default function App() {
   return (
     <View style={styles.container}>
-      <AllocateYourFriend />
-      {/* 
+      {/* <AllocateYourFriend /> */}
+
       <NavigationContainer>
         <Navigation />
 
         <StatusBar style="auto" />
-      </NavigationContainer> */}
+      </NavigationContainer>
     </View>
   );
 }
