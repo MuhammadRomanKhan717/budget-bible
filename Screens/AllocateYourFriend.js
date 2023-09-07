@@ -9,7 +9,7 @@ import {
 import { CircularProgressBase } from "react-native-circular-progress-indicator";
 const AllocateYourFriend = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ color: "#F9F9F9" }}>
       <View style={styles.header}>
         <TouchableOpacity>
           <Image
@@ -124,6 +124,7 @@ const AllocateYourFriend = () => {
           <Image source={require("../assets/iwwa_information.png")} />
         </TouchableOpacity>
       </View>
+
       <View style={{ flexDirection: "row" }}>
         <Text
           style={{
@@ -135,16 +136,28 @@ const AllocateYourFriend = () => {
         >
           Recap:
         </Text>
-        <Text
-          style={{
-            fontSize: 14,
-            fontWeight: "400",
-          }}
-        >
-          You have a personal allowance that you can spend as freely as you’d
-          like , your expenses are taken care of and your net worth is growing
-          rapidly!
-        </Text>
+
+        <View>
+          <Text
+            style={{
+              fontSize: 14,
+              fontWeight: "400",
+            }}
+          >
+            You have a personal allowance that you
+          </Text>
+        </View>
+      </View>
+      <View
+        style={{
+          fontSize: 14,
+          fontWeight: "600",
+          paddingLeft: 10,
+        }}
+      >
+        <Text>can spend as freely as you’d like , your expenses</Text>
+        <Text> are taken care of and your net worth is growing</Text>
+        <Text>rapidly!</Text>
       </View>
     </SafeAreaView>
   );
