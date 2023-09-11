@@ -9,16 +9,18 @@ import OnboardingScreen from "./Screens/OnboardingScreen";
 import LoginScreen from "./Screens/LoginScreen";
 import AllocateYourFriend from "./Screens/AllocateYourFriend";
 import "react-native-gesture-handler";
+import ProfileScreen from "./Screens/ProfileScreen";
 export default function App() {
   return (
     <View style={styles.container}>
+      <ProfileScreen />
       {/* <AllocateYourFriend /> */}
-
-      <NavigationContainer>
+      {/* 
+      {/* <NavigationContainer>
         <Navigation />
 
         <StatusBar style="auto" />
-      </NavigationContainer>
+      </NavigationContainer> */}
     </View>
   );
 }
