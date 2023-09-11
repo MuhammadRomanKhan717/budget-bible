@@ -21,7 +21,7 @@ const LoginScreen = ({ navigation }) => {
         <View>
           <Image
             style={styles.Image}
-            source={require("../assets/logoicon.jpg")}
+            source={require("../assets/Group6881.png")}
           />
           <Text style={styles.welcomeText}>Welcome Back!</Text>
           <Text style={styles.createText}>Login to your account</Text>

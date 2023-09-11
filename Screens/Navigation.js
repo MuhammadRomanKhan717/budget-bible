@@ -13,6 +13,7 @@ import ExpensesFlow from "./ExpensesFlow";
 import PayPeriodScreen from "./PayPeriodScreen";
 import AllocateYourFriend from "./AllocateYourFriend";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import ProfileScreen from "./ProfileScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -20,7 +21,7 @@ function MyDrawer() {
   return (
     <Drawer.Navigator>
       {/* <Drawer.Screen name="Feed" component={Feed} /> */}
-      <Drawer.Screen name="login" component={LoginScreen} />
+      <Drawer.Screen name="profile" component={ProfileScreen} />
     </Drawer.Navigator>
   );
 }

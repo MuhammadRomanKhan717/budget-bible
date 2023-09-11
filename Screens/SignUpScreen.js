@@ -22,7 +22,7 @@ const SignUpScreen = ({ navigation }) => {
         <View>
           <Image
             style={styles.Image}
-            source={require("../assets/logoicon.jpg")}
+            source={require("../assets/Group6881.png")}
           />
           <Text style={styles.welcomeText}>Welcome!</Text>
           <Text style={styles.createText}>Create a new account</Text>
