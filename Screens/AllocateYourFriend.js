@@ -11,7 +11,7 @@ const AllocateYourFriend = () => {
   return (
     <SafeAreaView style={{ color: "#F9F9F9" }}>
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("DashBoard")}>
           <Image
             style={styles.headerImage}
             source={require("../assets/bytesize_menu.png")}

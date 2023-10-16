@@ -14,6 +14,11 @@ import PayPeriodScreen from "./PayPeriodScreen";
 import AllocateYourFriend from "./AllocateYourFriend";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import ProfileScreen from "./ProfileScreen";
+import SettingsScreen from "./SettingsScreen";
+import EditProfileScreen from "./EditProfileScreen";
+import AccountsScreen from "./AccountsScreen";
+import IncomeExpensesScreen from "./IncomeExpensesScreen";
+import DashboardSCreen from "./DashboardSCreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -22,6 +27,7 @@ function MyDrawer() {
     <Drawer.Navigator>
       {/* <Drawer.Screen name="Feed" component={Feed} /> */}
       <Drawer.Screen name="profile" component={ProfileScreen} />
+      <Drawer.Screen name="DashBoard" component={DashboardSCreen} />
     </Drawer.Navigator>
   );
 }
@@ -39,7 +45,12 @@ const Navigation = () => {
       <Stack.Screen name="expenses" component={ExpensesFlow} />
       <Stack.Screen name="payPeriod" component={PayPeriodScreen} />
       <Stack.Screen name="allocatYourFriend" component={AllocateYourFriend} />
+      <Stack.Screen name="incomeExpanses" component={IncomeExpensesScreen} />
+      <Stack.Screen name="accounts" component={AccountsScreen} />
       <Stack.Screen name="Forget" component={ForgetPasswordScreen} />
+      <Stack.Screen name="profile" component={ProfileScreen} />
+      <Stack.Screen name="setting" component={SettingsScreen} />
+      <Stack.Screen name="Editprofile" component={EditProfileScreen} />
     </Stack.Navigator>
   );
 };

@@ -34,33 +34,34 @@ const PayPeriodScreen = ({ navigation }) => {
         </TouchableOpacity>
         <Text style={styles.headerText}>Pay Period</Text>
       </View>
-
-      <View style={styles.dateTextView}>
-        <Text style={styles.DateText}>From: 12/12/2022</Text>
-        <Text style={styles.DateText}>To: 19/12/2022</Text>
-      </View>
-      <View style={styles.IOView}>
-        <View style={{ flexDirection: "colmn", paddingTop: 12 }}>
-          <Text style={styles.IOText}>Income</Text>
-          <View style={{ flexDirection: "row", paddingTop: 12 }}>
-            <Text style={{ color: "#FFD700", fontSize: 18 }}>$</Text>
-            <Text style={{ fontSize: 18 }}>1000</Text>
-          </View>
+      <View style={{ paddingBottom: 15, paddingTop: 45 }}>
+        <View style={styles.dateTextView}>
+          <Text style={styles.DateText}>From: 12/12/2022</Text>
+          <Text style={styles.DateText}>To: 19/12/2022</Text>
         </View>
-
-        <View style={{ flexDirection: "colmn", paddingTop: 12 }}>
-          <Text style={styles.IOText}>Expense</Text>
-          <View style={{ flexDirection: "row", paddingTop: 12 }}>
-            <Text style={{ color: "#FFD700", fontSize: 18 }}>$</Text>
-            <Text style={{ fontSize: 18 }}>525</Text>
+        <View style={styles.IOView}>
+          <View style={{ flexDirection: "colmn", paddingTop: 12 }}>
+            <Text style={styles.IOText}>Income</Text>
+            <View style={{ flexDirection: "row", paddingTop: 12 }}>
+              <Text style={{ color: "#FFD700", fontSize: 18 }}>$</Text>
+              <Text style={{ fontSize: 18 }}>1000</Text>
+            </View>
           </View>
-        </View>
 
-        <View style={{ flexDirection: "colmn", paddingTop: 12 }}>
-          <Text style={styles.IOText}>Balance</Text>
-          <View style={{ flexDirection: "row", paddingTop: 12 }}>
-            <Text style={{ color: "#FFD700", fontSize: 18 }}>$</Text>
-            <Text style={{ fontSize: 18 }}>475</Text>
+          <View style={{ flexDirection: "colmn", paddingTop: 12 }}>
+            <Text style={styles.IOText}>Expense</Text>
+            <View style={{ flexDirection: "row", paddingTop: 12 }}>
+              <Text style={{ color: "#FFD700", fontSize: 18 }}>$</Text>
+              <Text style={{ fontSize: 18 }}>525</Text>
+            </View>
+          </View>
+
+          <View style={{ flexDirection: "colmn", paddingTop: 12 }}>
+            <Text style={styles.IOText}>Balance</Text>
+            <View style={{ flexDirection: "row", paddingTop: 12 }}>
+              <Text style={{ color: "#FFD700", fontSize: 18 }}>$</Text>
+              <Text style={{ fontSize: 18 }}>475</Text>
+            </View>
           </View>
         </View>
       </View>
@@ -139,7 +140,6 @@ const styles = StyleSheet.create({
   },
   headerView: {
     paddingLeft: 8,
-    // backgroundColor: "red",
     flexDirection: "row",
     paddingTop: 22,
   },
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
 
   headerText: {
     paddingLeft: 85,
-    fontSize: 27,
+    fontSize: 20,
     fontWeight: "500",
   },
 
@@ -161,9 +161,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 18,
     marginHorizontal: 20,
-
     borderRadius: 10,
-
     borderWidth: 1,
     height: 40,
   },
@@ -213,7 +211,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     borderRadius: 10,
     paddingRight: 12,
-    borderWidth: 1,
+    borderWidth: 0.61,
 
     borderColor: "gray",
     justifyContent: "space-evenly",

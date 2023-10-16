@@ -10,17 +10,29 @@ import LoginScreen from "./Screens/LoginScreen";
 import AllocateYourFriend from "./Screens/AllocateYourFriend";
 import "react-native-gesture-handler";
 import ProfileScreen from "./Screens/ProfileScreen";
+import SettingsScreen from "./Screens/SettingsScreen";
+import EditProfileScreen from "./Screens/EditProfileScreen";
+import DashboardSCreen from "./Screens/DashboardSCreen";
+import AddTransactionsScreen from "./Screens/AddTransactionsScreen";
+import IncomeExpensesScreen from "./Screens/IncomeExpensesScreen";
+import AccountsScreen from "./Screens/AccountsScreen";
 export default function App() {
   return (
     <View style={styles.container}>
-      <ProfileScreen />
+      {/* <SettingsScreen /> */}
+      {/* <EditProfileScreen /> */}
+      {/* <DashboardSCreen /> */}
+      {/* <AddTransactionsScreen /> */}
+      {/* <IncomeExpensesScreen /> */}
+      {/* <AccountsScreen /> */}
+      {/* <ProfileScreen /> */}
       {/* <AllocateYourFriend /> */}
-      {/* 
-      {/* <NavigationContainer>
+
+      <NavigationContainer>
         <Navigation />
 
         <StatusBar style="auto" />
-      </NavigationContainer> */}
+      </NavigationContainer>
     </View>
   );
 }
