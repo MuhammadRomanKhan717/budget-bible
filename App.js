@@ -16,6 +16,7 @@ import DashboardSCreen from "./Screens/DashboardSCreen";
 import AddTransactionsScreen from "./Screens/AddTransactionsScreen";
 import IncomeExpensesScreen from "./Screens/IncomeExpensesScreen";
 import AccountsScreen from "./Screens/AccountsScreen";
+import TalkToTerrance from "./Screens/TalkToTerrance";
 export default function App() {
   return (
     <View style={styles.container}>
@@ -27,12 +28,12 @@ export default function App() {
       {/* <AccountsScreen /> */}
       {/* <ProfileScreen /> */}
       {/* <AllocateYourFriend /> */}
-
-      <NavigationContainer>
+      <TalkToTerrance />
+      {/* <NavigationContainer>
         <Navigation />
 
         <StatusBar style="auto" />
-      </NavigationContainer>
+      </NavigationContainer> */}
     </View>
   );
 }
