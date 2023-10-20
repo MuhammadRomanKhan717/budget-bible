@@ -17,6 +17,7 @@ import AddTransactionsScreen from "./Screens/AddTransactionsScreen";
 import IncomeExpensesScreen from "./Screens/IncomeExpensesScreen";
 import AccountsScreen from "./Screens/AccountsScreen";
 import TalkToTerrance from "./Screens/TalkToTerrance";
+import ContactSupportScreen from "./Screens/ContactSupportScreen";
 export default function App() {
   return (
     <View style={styles.container}>
@@ -28,7 +29,8 @@ export default function App() {
       {/* <AccountsScreen /> */}
       {/* <ProfileScreen /> */}
       {/* <AllocateYourFriend /> */}
-      <TalkToTerrance />
+      {/* <TalkToTerrance /> */}
+      <ContactSupportScreen />
       {/* <NavigationContainer>
         <Navigation />
 
