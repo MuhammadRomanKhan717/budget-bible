@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 
-const ProfileScreen = () => {
+const ProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View style={styles.header}>

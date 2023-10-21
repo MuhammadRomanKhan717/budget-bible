@@ -25,9 +25,12 @@ const Drawer = createDrawerNavigator();
 function MyDrawer() {
   return (
     <Drawer.Navigator>
-      {/* <Drawer.Screen name="Feed" component={Feed} /> */}
       <Drawer.Screen name="profile" component={ProfileScreen} />
-      <Drawer.Screen name="DashBoard" component={DashboardSCreen} />
+      <Drawer.Screen name="Dashboard" component={DashboardSCreen} />
+
+      <Drawer.Screen name="Income" component={IncomeExpensesScreen} />
+      <Drawer.Screen name="Planned" component={AccountsScreen} />
+      <Drawer.Screen name="Forcast" component={AccountsScreen} />
     </Drawer.Navigator>
   );
 }
