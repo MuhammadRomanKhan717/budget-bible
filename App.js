@@ -18,6 +18,7 @@ import IncomeExpensesScreen from "./Screens/IncomeExpensesScreen";
 import AccountsScreen from "./Screens/AccountsScreen";
 import TalkToTerrance from "./Screens/TalkToTerrance";
 import ContactSupportScreen from "./Screens/ContactSupportScreen";
+import FAQsScreen from "./Screens/FAQsScreen";
 export default function App() {
   return (
     <View style={styles.container}>
@@ -31,11 +32,12 @@ export default function App() {
       {/* <AllocateYourFriend /> */}
       {/* <TalkToTerrance /> */}
       {/* <ContactSupportScreen /> */}
-      <NavigationContainer>
+      <FAQsScreen />
+      {/* <NavigationContainer>
         <Navigation />
 
         <StatusBar style="auto" />
-      </NavigationContainer>
+      </NavigationContainer> */}
     </View>
   );
 }
