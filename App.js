@@ -32,12 +32,12 @@ export default function App() {
       {/* <AllocateYourFriend /> */}
       {/* <TalkToTerrance /> */}
       {/* <ContactSupportScreen /> */}
-      <FAQsScreen />
-      {/* <NavigationContainer>
+      {/* <FAQsScreen /> */}
+      <NavigationContainer>
         <Navigation />
 
         <StatusBar style="auto" />
-      </NavigationContainer> */}
+      </NavigationContainer>
     </View>
   );
 }

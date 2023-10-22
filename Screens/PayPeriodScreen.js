@@ -19,7 +19,7 @@ const PayPeriodScreen = ({ navigation }) => {
       >
         <TouchableOpacity
           style={[styles.bottomNext]}
-          onPress={() => navigation.navigate("allocatYourFriend")}
+          onPress={() => navigation.navigate("mainScreen")}
         >
           <Text>Next</Text>
         </TouchableOpacity>

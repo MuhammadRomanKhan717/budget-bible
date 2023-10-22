@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import {
   StyleSheet,
   Text,
@@ -7,11 +8,12 @@ import {
   Image,
 } from "react-native";
 import { CircularProgressBase } from "react-native-circular-progress-indicator";
-const AllocateYourFriend = () => {
+const AllocateYourFriend = ({ props }) => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{ color: "#F9F9F9" }}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.navigate("profile")}>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
           <Image
             style={styles.headerImage}
             source={require("../assets/bytesize_menu.png")}

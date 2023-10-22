@@ -49,7 +49,7 @@ const ProfileScreen = ({ navigation }) => {
         <View style={styles.perefrencesView}>
           <TouchableOpacity
             style={styles.perefrencesText}
-            onPress={() => Navigation.navigate("allocatYourFriend")}
+            onPress={() => navigation.navigate("mainScreen")}
           >
             <Text>My Balance</Text>
             <Image

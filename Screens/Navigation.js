@@ -24,7 +24,12 @@ const Drawer = createDrawerNavigator();
 
 function MyDrawer() {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator
+      screenOptions={{
+        header: () => null,
+      }}
+    >
+      <Drawer.Screen name="allocatYourFriend" component={AllocateYourFriend} />
       <Drawer.Screen name="profile" component={ProfileScreen} />
       <Drawer.Screen name="Dashboard" component={DashboardSCreen} />
 
@@ -40,14 +45,13 @@ const Navigation = () => {
       screenOptions={{ headerShown: false }}
       initialRouteName="Onbording"
     >
-      <Stack.Screen name="Drawer" component={MyDrawer} />
       <Stack.Screen name="splash" component={SplashScreen} />
       <Stack.Screen name="Onbording" component={OnboardingScreen} />
       <Stack.Screen name="Signup" component={SignUpScreen} />
       <Stack.Screen name="login" component={LoginScreen} />
       <Stack.Screen name="expenses" component={ExpensesFlow} />
       <Stack.Screen name="payPeriod" component={PayPeriodScreen} />
-      <Stack.Screen name="allocatYourFriend" component={AllocateYourFriend} />
+      <Stack.Screen name="mainScreen" component={MyDrawer} />
       <Stack.Screen name="incomeExpanses" component={IncomeExpensesScreen} />
       <Stack.Screen name="accounts" component={AccountsScreen} />
       <Stack.Screen name="Forget" component={ForgetPasswordScreen} />
