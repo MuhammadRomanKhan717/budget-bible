@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import React from "react";
 
-const ContactSupportScreen = () => {
+const ContactSupportScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View
@@ -20,13 +20,13 @@ const ContactSupportScreen = () => {
       >
         <TouchableOpacity
           style={[styles.bottomNext]}
-          onPress={() => navigation.navigate("")}
+          onPress={() => navigation.navigate("Terrance")}
         >
           <Text style={{ color: "white" }}>Send</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.headerView}>
-        <TouchableOpacity onPress={() => navigation.navigate("expenses")}>
+        <TouchableOpacity onPress={() => navigation.navigate("")}>
           <Image
             style={styles.headerImage}
             source={require("../assets/eva_arrow-ios-back-fill.png")}

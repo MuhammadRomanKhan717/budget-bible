@@ -8,11 +8,11 @@ import {
 } from "react-native";
 import React from "react";
 
-const EditProfileScreen = () => {
+const EditProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View style={styles.headerView}>
-        <TouchableOpacity onPress={() => navigation.navigate("profile")}>
+        <TouchableOpacity onPress={() => navigation.navigate("setting")}>
           <Image
             style={styles.TouchableOpacity}
             source={require("../assets/eva_arrow-back-outline.png")}

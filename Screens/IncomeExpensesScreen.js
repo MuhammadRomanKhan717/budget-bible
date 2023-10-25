@@ -9,7 +9,7 @@ import {
 import React from "react";
 import ExpensesComponent from "../Components/ExpensesComponent";
 
-const IncomeExpensesScreen = () => {
+const IncomeExpensesScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View
@@ -33,7 +33,7 @@ const IncomeExpensesScreen = () => {
       </View>
 
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
           <Image
             style={styles.headerImage}
             source={require("../assets/bytesize_menu.png")}

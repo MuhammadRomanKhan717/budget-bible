@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import {
   StyleSheet,
   Text,
@@ -8,11 +9,12 @@ import {
 } from "react-native";
 import React from "react";
 
-const ProfileScreen = ({ navigation }) => {
+const ProfileScreen = ({ props }) => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
           <Image
             style={styles.headerImage}
             source={require("../assets/bytesize_menu.png")}
@@ -49,7 +51,7 @@ const ProfileScreen = ({ navigation }) => {
         <View style={styles.perefrencesView}>
           <TouchableOpacity
             style={styles.perefrencesText}
-            onPress={() => navigation.navigate("mainScreen")}
+            onPress={() => navigation.navigate("allocateTourFunds")}
           >
             <Text>My Balance</Text>
             <Image
@@ -59,7 +61,10 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={styles.perefrencesView}>
-          <TouchableOpacity style={styles.perefrencesText}>
+          <TouchableOpacity
+            style={styles.perefrencesText}
+            onPress={() => navigation.navigate("setting")}
+          >
             <Text>Settings</Text>
             <Image
               style={styles.arrow}
@@ -68,7 +73,10 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={styles.perefrencesView}>
-          <TouchableOpacity style={styles.perefrencesText}>
+          <TouchableOpacity
+            style={styles.perefrencesText}
+            onPress={() => navigation.navigate("OnboardingScreen")}
+          >
             <Text>Log out</Text>
             <Image
               style={styles.arrow}

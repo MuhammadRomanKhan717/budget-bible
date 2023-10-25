@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 
-const SettingsScreen = () => {
+const SettingsScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View style={styles.headerView}>
@@ -31,7 +31,10 @@ const SettingsScreen = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.chngePasswdView}>
-        <TouchableOpacity style={styles.chngePasswd}>
+        <TouchableOpacity
+          style={styles.chngePasswd}
+          onPress={() => navigation.navigate("Editprofile")}
+        >
           <Image source={require("../assets/gg_profile.png")} />
           <Text style={styles.EditProfileText}>Edit Profile</Text>
           <Image source={require("../assets/eva_arrow-ios-back.png")} />

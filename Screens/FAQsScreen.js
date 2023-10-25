@@ -8,11 +8,11 @@ import {
 } from "react-native";
 import React from "react";
 
-const FAQsScreen = () => {
+const FAQsScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.navigate("profile")}>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
           <Image
             style={styles.headerImage}
             source={require("../assets/bytesize_menu.png")}

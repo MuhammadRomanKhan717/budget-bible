@@ -10,16 +10,18 @@ import {
 import React from "react";
 import AccountDetail from "../Components/AccountDetail";
 
-const AccountsScreen = () => {
+const AccountsScreen = ({ navigation }) => {
   return (
     <View>
       <SafeAreaView>
         <View style={[styles.headerView]}>
           <View style={{ paddingTop: 12 }}>
-            <Image
-              style={{ height: 28, width: 28 }}
-              source={require("../assets/eva_arrow-back-outlineWhiteColor.png")}
-            />
+            <TouchableOpacity onPress={() => navigation.openDrawer()}>
+              <Image
+                style={{ height: 28, width: 28 }}
+                source={require("../assets/eva_arrow-back-outlineWhiteColor.png")}
+              />
+            </TouchableOpacity>
           </View>
           <View>
             <Text style={styles.AccountText}>ACCOUNTS</Text>

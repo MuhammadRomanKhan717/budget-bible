@@ -26,7 +26,9 @@ const PayPeriodScreen = ({ navigation }) => {
       </View>
 
       <View style={styles.headerView}>
-        <TouchableOpacity onPress={() => navigation.navigate("expenses")}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("allocateTourFunds")}
+        >
           <Image
             style={styles.headerImage}
             source={require("../assets/eva_arrow-ios-back-fill.png")}

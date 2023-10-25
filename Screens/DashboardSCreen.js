@@ -8,11 +8,11 @@ import {
 } from "react-native";
 import React from "react";
 import { CircularProgressBase } from "react-native-circular-progress-indicator";
-const DashboardSCreen = () => {
+const DashboardSCreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
           <Image
             style={styles.headerImage}
             source={require("../assets/bytesize_menu.png")}

@@ -6,14 +6,20 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
 import React from "react";
 
-const TalkToTerrance = () => {
+const TalkToTerrance = ({ props }) => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <View style={styles.header}>
         <TouchableOpacity>
-          <Image source={require("../assets/bytesize_menu.png")} />
+          <Image
+            source={require("../assets/bytesize_menu.png")}
+            onPress={() => navigation.openDrawer()}
+          />
         </TouchableOpacity>
         <View style={{ paddingLeft: 50 }}>
           <TouchableOpacity style={styles.HeaderImage2}>
@@ -33,7 +39,10 @@ const TalkToTerrance = () => {
           </TouchableOpacity>
         </View>
         <View style={{ paddingBottom: 14 }}>
-          <TouchableOpacity style={styles.bottons}>
+          <TouchableOpacity
+            style={styles.bottons}
+            onPress={() => navigation.navigate("contact")}
+          >
             <Text style={{ color: "white" }}>Contact Support</Text>
           </TouchableOpacity>
         </View>
