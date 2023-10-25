@@ -23,6 +23,7 @@ import CustomDrawer from "../Components/CustomDrawer";
 import TalkToTerrance from "./TalkToTerrance";
 import ContactSupportScreen from "./ContactSupportScreen";
 import FAQsScreen from "./FAQsScreen";
+import ChangePasswordScreen from "./ChangePasswordScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -206,6 +207,7 @@ const Navigation = () => {
       <Stack.Screen name="allocateTourFunds" component={AllocateYourFriend} />
       <Stack.Screen name="Terrance" component={TalkToTerrance} />
       <Stack.Screen name="contact" component={ContactSupportScreen} />
+      <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} />
     </Stack.Navigator>
   );
 };

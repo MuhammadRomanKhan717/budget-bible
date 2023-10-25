@@ -24,7 +24,10 @@ const SettingsScreen = ({ navigation }) => {
         <Text style={styles.AccountsTitleText}>Accounts Settings</Text>
       </View>
       <View style={styles.chngePasswdView}>
-        <TouchableOpacity style={styles.chngePasswd}>
+        <TouchableOpacity
+          style={styles.chngePasswd}
+          onPress={() => navigation.navigate("ChangePassword")}
+        >
           <Image source={require("../assets/carbon_password.png")} />
           <Text style={styles.chanPasswodText}>Change Password</Text>
           <Image source={require("../assets/eva_arrow-ios-back.png")} />
