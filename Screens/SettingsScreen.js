@@ -48,14 +48,15 @@ const SettingsScreen = ({ navigation }) => {
           Prefrences
         </Text>
       </View>
+
       <View style={styles.chngePasswdView}>
-        <TouchableOpacity style={styles.chngePasswd}>
+        <TouchableOpacity
+          style={styles.chngePasswd}
+          onPress={() => navigation.navigate("login")}
+        >
           <Image source={require("../assets/ant-design_logout-outlined.png")} />
           <Text style={styles.LogoutText}>Logout</Text>
-          <Image
-            source={require("../assets/eva_arrow-ios-back.png")}
-            onPress={() => navigation.navigate("login")}
-          />
+          <Image source={require("../assets/eva_arrow-ios-back.png")} />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
