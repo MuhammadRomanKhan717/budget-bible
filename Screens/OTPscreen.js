@@ -3,79 +3,80 @@ import {
   Text,
   View,
   SafeAreaView,
-  Image,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import React from "react";
+// import OtpInputs from "react-native-otp-inputs";
 
-const ChangePasswordScreen = ({ navigation }) => {
+const OTPscreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View style={styles.headerView}>
-        <TouchableOpacity onPress={() => navigation.navigate("setting")}>
-          <Image
-            style={styles.TouchableOpacity}
-            source={require("../assets/eva_arrow-back-outline.png")}
-          />
-        </TouchableOpacity>
-        <Text style={styles.headerText}>Change Password</Text>
+        <Text style={styles.headerText}>Verification Code</Text>
       </View>
       <View style={styles.AllertText}>
         <Text style={styles.Text}>
-          Please Check your Mail. we have sent you an email that contains a
-          verification code
+          Enter the Verification Code we Just Send
         </Text>
+        <Text style={styles.Text}> You To Your Email Address</Text>
       </View>
-      <View style={styles.ImageView}>
-        <Image source={require("../assets/Illustration.png")} />
+      <View>
+        {/* <OtpInputs
+          handleChange={(code) => console.log(code)}
+          numberOfInputs={6}
+        /> */}
       </View>
       <View style={{ paddingTop: 125 }}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("OTP")}
+          onPress={() => navigation.navigate("Confirm")}
           style={[styles.button]}
         >
           <Text style={[styles.buttonText]}>Verify Code</Text>
+        </TouchableOpacity>
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "center",
+          paddingTop: 12,
+        }}
+      >
+        <Text>Didn’t get any code ?</Text>
+        <TouchableOpacity>
+          <Text style={{ paddingLeft: 10 }}>Resend</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
 };
 
-export default ChangePasswordScreen;
+export default OTPscreen;
 
 const styles = StyleSheet.create({
   headerView: {
-    paddingLeft: 8,
-    // backgroundColor: "red",
+    marginTop: 50,
+    alignItems: "center",
+    justifyContent: "center",
     flexDirection: "row",
-    paddingTop: 22,
-    paddingLeft: 12,
   },
-  headerImage: {
-    height: 32,
-    width: 29,
-  },
+
   headerText: {
-    paddingLeft: 65,
-    fontSize: 20,
-    fontWeight: "500",
-    paddingBottom: 55,
+    fontSize: 28.52,
+    fontWeight: "400",
+    paddingTop: 35,
   },
   AllertText: {
     height: 44,
     width: 333,
     paddingHorizontal: 21,
+    alignSelf: "center",
   },
   Text: {
     lineHeight: 21.72,
     fontSize: 14.48,
     fontWeight: "400",
     paddingLeft: 12,
-  },
-  ImageView: {
-    height: 327.12,
-    width: 327.12,
-    paddingHorizontal: 12,
   },
   button: {
     backgroundColor: "#FFD700",

@@ -24,6 +24,9 @@ import TalkToTerrance from "./TalkToTerrance";
 import ContactSupportScreen from "./ContactSupportScreen";
 import FAQsScreen from "./FAQsScreen";
 import ChangePasswordScreen from "./ChangePasswordScreen";
+import OTPscreen from "./OTPscreen";
+import ConfirmCodeScreen from "./ConfirmCodeScreen";
+import PasswordResetScreen from "./PasswordResetScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -208,6 +211,9 @@ const Navigation = () => {
       <Stack.Screen name="Terrance" component={TalkToTerrance} />
       <Stack.Screen name="contact" component={ContactSupportScreen} />
       <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} />
+      <Stack.Screen name="OTP" component={OTPscreen} />
+      <Stack.Screen name="Confirm" component={ConfirmCodeScreen} />
+      <Stack.Screen name="ResetPswd" component={PasswordResetScreen} />
     </Stack.Navigator>
   );
 };
