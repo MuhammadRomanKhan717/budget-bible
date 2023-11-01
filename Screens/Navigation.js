@@ -27,6 +27,7 @@ import ChangePasswordScreen from "./ChangePasswordScreen";
 import OTPscreen from "./OTPscreen";
 import ConfirmCodeScreen from "./ConfirmCodeScreen";
 import PasswordResetScreen from "./PasswordResetScreen";
+import ShareScreen from "./ShareScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -169,7 +170,7 @@ function MyDrawer() {
       />
       <Drawer.Screen
         name="Share"
-        component={AccountsScreen}
+        component={ShareScreen}
         options={{
           drawerIcon: ({ color }) => (
             <Image
