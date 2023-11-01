@@ -94,7 +94,6 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
-    // justifyContent: "space-around",
     marginHorizontal: 10,
     paddingTop: 10,
   },
@@ -131,9 +130,7 @@ const styles = StyleSheet.create({
     height: 57,
     paddingLeft: 12,
     justifyContent: "center",
-    // backgroundColor: "#B8B8B8",
     marginBottom: 3,
-    // borderWidth: 1,
 
     borderRadius: 15,
   },
@@ -169,7 +166,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    // backgroundColor: "#B8B8B8",
     paddingBottom: 10,
     paddingLeft: 26,
     marginBottom: 5,
