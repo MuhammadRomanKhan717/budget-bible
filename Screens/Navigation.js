@@ -106,7 +106,7 @@ function MyDrawer() {
         component={IncomeExpensesScreen}
         options={{
           drawerIcon: ({ color }) => (
-            <Image source={require("../assets/Group6877.png")} />
+            <Image source={require("../assets/Group6877.png")} color={color} />
           ),
         }}
       />
@@ -115,7 +115,10 @@ function MyDrawer() {
         component={AccountsScreen}
         options={{
           drawerIcon: ({ color }) => (
-            <Image source={require("../assets/clarity_walletline1.png")} />
+            <Image
+              source={require("../assets/clarity_walletline1.png")}
+              color={color}
+            />
           ),
         }}
       />
@@ -124,7 +127,10 @@ function MyDrawer() {
         component={AccountsScreen}
         options={{
           drawerIcon: ({ color }) => (
-            <Image source={require("../assets/clarity_bank-line.png")} />
+            <Image
+              source={require("../assets/clarity_bank-line.png")}
+              color={color}
+            />
           ),
         }}
       />
@@ -133,7 +139,7 @@ function MyDrawer() {
         component={AccountsScreen}
         options={{
           drawerIcon: ({ color }) => (
-            <Image source={require("../assets/Vector2.png")} />
+            <Image source={require("../assets/Vector2.png")} color={color} />
           ),
         }}
       />
@@ -144,6 +150,7 @@ function MyDrawer() {
           drawerIcon: ({ color }) => (
             <Image
               source={require("../assets/radix-icons_question-mark-circled.png")}
+              color={color}
             />
           ),
         }}
@@ -153,7 +160,10 @@ function MyDrawer() {
         component={TalkToTerrance}
         options={{
           drawerIcon: ({ color }) => (
-            <Image source={require("../assets/system-uicons_support.png")} />
+            <Image
+              source={require("../assets/system-uicons_support.png")}
+              color={color}
+            />
           ),
         }}
       />
@@ -162,7 +172,10 @@ function MyDrawer() {
         component={AccountsScreen}
         options={{
           drawerIcon: ({ color }) => (
-            <Image source={require("../assets/carbon_share.png")} />
+            <Image
+              source={require("../assets/carbon_share.png")}
+              color={color}
+            />
           ),
         }}
       />
@@ -171,7 +184,7 @@ function MyDrawer() {
         component={AccountsScreen}
         options={{
           drawerIcon: ({ color }) => (
-            <Image source={require("../assets/Maskgroup.png")} />
+            <Image source={require("../assets/Maskgroup.png")} color={color} />
           ),
         }}
       />
@@ -180,7 +193,10 @@ function MyDrawer() {
         component={AccountsScreen}
         options={{
           drawerIcon: ({ color }) => (
-            <Image source={require("../assets/cil_settings.png")} />
+            <Image
+              source={require("../assets/cil_settings.png")}
+              color={color}
+            />
           ),
         }}
       />
