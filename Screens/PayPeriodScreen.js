@@ -36,7 +36,8 @@ const PayPeriodScreen = ({ navigation }) => {
         </TouchableOpacity>
         <Text style={styles.headerText}>Pay Period</Text>
       </View>
-      <View style={{ paddingBottom: 15, paddingTop: 45 }}>
+
+      <View style={styles.topComponent}>
         <View style={styles.dateTextView}>
           <Text style={styles.DateText}>From: 12/12/2022</Text>
           <Text style={styles.DateText}>To: 19/12/2022</Text>
@@ -68,47 +69,61 @@ const PayPeriodScreen = ({ navigation }) => {
         </View>
       </View>
 
-      <View style={styles.dateTextView}>
-        <Text style={styles.DateText}>Expense</Text>
-        <Text style={styles.DateText}>Due Date</Text>
-        <Text style={styles.DateText}>Amount</Text>
-      </View>
-      <View style={styles.IOView2}>
-        <View style={styles.Expense}>
-          <Image source={require("../assets/Group6867.png")} />
-          <Text>Grocery</Text>
-          <Text>12/12</Text>
-          <Text>$50</Text>
+      <View style={styles.BottomComponent}>
+        <View style={styles.dateTextView}>
+          <Text style={styles.DateText}>Expense</Text>
+          <Text style={styles.DateText}>Due Date</Text>
+          <Text style={styles.DateText}>Amount</Text>
         </View>
-        <View style={styles.Expense}>
-          <Image source={require("../assets/Group6868.png")} />
-          <Text>Gas</Text>
-          <Text>12/12</Text>
-          <Text>$50</Text>
-        </View>
-        <View style={styles.Expense}>
-          <Image source={require("../assets/Group6869.png")} />
-          <Text>Internet</Text>
-          <Text>12/12</Text>
-          <Text>$50</Text>
-        </View>
-        <View style={styles.Expense}>
-          <Image source={require("../assets/Group6870.png")} />
-          <Text>Electricity</Text>
-          <Text>12/12</Text>
-          <Text>$50</Text>
-        </View>
-        <View style={styles.Expense}>
-          <Image source={require("../assets/Group6871.png")} />
-          <Text>Car Insurance</Text>
-          <Text>12/12</Text>
-          <Text>$50</Text>
-        </View>
-        <View style={styles.Expense}>
-          <Image source={require("../assets/Group6872.png")} />
-          <Text>Phone</Text>
-          <Text>12/12</Text>
-          <Text>$50</Text>
+        <View style={styles.IOView2}>
+          <View style={styles.Expense}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Image source={require("../assets/Group6867.png")} />
+              <Text>Grocery</Text>
+            </View>
+            <Text>12/12</Text>
+            <Text>$50</Text>
+          </View>
+          <View style={styles.Expense}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Image source={require("../assets/Group6868.png")} />
+              <Text>Gas</Text>
+            </View>
+            <Text>12/12</Text>
+            <Text>$50</Text>
+          </View>
+          <View style={styles.Expense}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Image source={require("../assets/Group6869.png")} />
+              <Text>Internet</Text>
+            </View>
+            <Text>12/12</Text>
+            <Text>$50</Text>
+          </View>
+          <View style={styles.Expense}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Image source={require("../assets/Group6870.png")} />
+              <Text>Electricity</Text>
+            </View>
+            <Text>12/12</Text>
+            <Text>$50</Text>
+          </View>
+          <View style={styles.Expense}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Image source={require("../assets/Group6871.png")} />
+              <Text>Car Insurance</Text>
+            </View>
+            <Text>12/12</Text>
+            <Text>$50</Text>
+          </View>
+          <View style={styles.Expense}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Image source={require("../assets/Group6872.png")} />
+              <Text>Phone</Text>
+            </View>
+            <Text>12/12</Text>
+            <Text>$50</Text>
+          </View>
         </View>
       </View>
     </SafeAreaView>
@@ -155,7 +170,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "500",
   },
-
+  topComponent: {
+    borderWidth: 1,
+    borderRadius: 10,
+    height: 127,
+    width: 335,
+    alignSelf: "center",
+    marginTop: 43,
+  },
   dateTextView: {
     flexDirection: "row",
     alignItems: "center",
@@ -163,9 +185,20 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 18,
     marginHorizontal: 20,
-    borderRadius: 10,
+    width: 335,
+    height: 39,
+    alignSelf: "center",
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
+  },
+  BottomComponent: {
     borderWidth: 1,
-    height: 40,
+    borderRadius: 10,
+    height: 348,
+    width: 335,
+    alignSelf: "center",
+    justifyContent: "space-between",
+    marginTop: 15,
   },
   DateText: {
     color: "white",
@@ -174,9 +207,9 @@ const styles = StyleSheet.create({
   Expense: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-around",
-    paddingHorizontal: 18,
-    marginHorizontal: 20,
+    justifyContent: "space-between",
+
+    paddingHorizontal: 15,
   },
   IOView: {
     shadowColor: "#000000",
@@ -192,31 +225,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     marginHorizontal: 20,
     flexDirection: "row",
-    borderRadius: 10,
-    paddingRight: 12,
-    borderWidth: 1,
+
     justifyContent: "space-evenly",
   },
   IOView2: {
-    shadowColor: "#000000",
-    shadowOffset: {
-      width: 0,
-      height: 18,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 20.0,
-    elevation: 24,
-
-    height: "50%",
-
-    marginHorizontal: 20,
-    flexDirection: "column",
-    borderRadius: 10,
-    paddingRight: 12,
-    borderWidth: 0.61,
-
-    borderColor: "gray",
-    justifyContent: "space-evenly",
+    // height: "50%",
+    // flexDirection: "column",
+    // borderRadius: 10,
+    // paddingRight: 12,
+    // borderColor: "gray",
+    // justifyContent: "space-evenly",
   },
   IOText: {
     fontSize: 18,
