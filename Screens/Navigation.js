@@ -144,63 +144,6 @@ function MyDrawer() {
           ),
         }}
       />
-      <Drawer.Screen
-        name="Frequently Asked Questions"
-        component={FAQsScreen}
-        options={{
-          drawerIcon: ({ color }) => (
-            <Image
-              source={require("../assets/radix-icons_question-mark-circled.png")}
-              color={color}
-            />
-          ),
-        }}
-      />
-      <Drawer.Screen
-        name="Talk to Terrance"
-        component={TalkToTerrance}
-        options={{
-          drawerIcon: ({ color }) => (
-            <Image
-              source={require("../assets/system-uicons_support.png")}
-              color={color}
-            />
-          ),
-        }}
-      />
-      <Drawer.Screen
-        name="Share"
-        component={ShareScreen}
-        options={{
-          drawerIcon: ({ color }) => (
-            <Image
-              source={require("../assets/carbon_share.png")}
-              color={color}
-            />
-          ),
-        }}
-      />
-      <Drawer.Screen
-        name="Order The Budget Bibble"
-        component={AccountsScreen}
-        options={{
-          drawerIcon: ({ color }) => (
-            <Image source={require("../assets/Maskgroup.png")} color={color} />
-          ),
-        }}
-      />
-      <Drawer.Screen
-        name="Settings"
-        component={AccountsScreen}
-        options={{
-          drawerIcon: ({ color }) => (
-            <Image
-              source={require("../assets/cil_settings.png")}
-              color={color}
-            />
-          ),
-        }}
-      />
     </Drawer.Navigator>
   );
 }
@@ -231,6 +174,8 @@ const Navigation = () => {
       <Stack.Screen name="OTP" component={OTPscreen} />
       <Stack.Screen name="Confirm" component={ConfirmCodeScreen} />
       <Stack.Screen name="ResetPswd" component={PasswordResetScreen} />
+      <Stack.Screen name="FAQ" component={FAQsScreen} />
+      <Stack.Screen name="share" component={ShareScreen} />
     </Stack.Navigator>
   );
 };
