@@ -1,4 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -6,10 +7,13 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Image,
+  Modal,
+  Button,
 } from "react-native";
 import { CircularProgressBase } from "react-native-circular-progress-indicator";
 const AllocateYourFriend = ({ props }) => {
   const navigation = useNavigation();
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView style={{ color: "#F9F9F9" }}>
       <View style={styles.header}>
@@ -122,11 +126,30 @@ const AllocateYourFriend = ({ props }) => {
         >
           Savings: $9000
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
           <Image source={require("../assets/iwwa_information.png")} />
         </TouchableOpacity>
       </View>
-
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>
+                Do you have $9000 in your savings right now? If not,
+                congratulations, you’re on pace to accomplish a financial
+                milestone
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      </Modal>
       <View style={{ flexDirection: "row" }}>
         <Text
           style={{
@@ -205,5 +228,30 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "57%",
+    marginLeft: "20%",
+  },
+  modalView: {
+    margin: 50,
+    backgroundColor: "white",
+    borderRadius: 5,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "black",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 50,
+    elevation: 5,
+  },
+  modalText: {
+    textAlign: "center",
   },
 });
