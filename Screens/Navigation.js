@@ -28,6 +28,7 @@ import OTPscreen from "./OTPscreen";
 import ConfirmCodeScreen from "./ConfirmCodeScreen";
 import PasswordResetScreen from "./PasswordResetScreen";
 import ShareScreen from "./ShareScreen";
+import CalenderScreen from "./CalenderScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -176,6 +177,7 @@ const Navigation = () => {
       <Stack.Screen name="ResetPswd" component={PasswordResetScreen} />
       <Stack.Screen name="FAQ" component={FAQsScreen} />
       <Stack.Screen name="share" component={ShareScreen} />
+      <Stack.Screen name="Calender" component={CalenderScreen} />
     </Stack.Navigator>
   );
 };

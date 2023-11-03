@@ -24,7 +24,7 @@ const AllocateYourFriend = ({ props }) => {
           />
         </TouchableOpacity>
         <Text style={styles.headerText}>Allocate your funds</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Calender")}>
           <Image
             style={styles.headerImage}
             source={require("../assets/uil_schedule.png")}
