@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import { Feather } from "@expo/vector-icons";
 
 const LoginScreen = ({ navigation }) => {
   return (
@@ -37,7 +38,7 @@ const LoginScreen = ({ navigation }) => {
             />
           </View>
           <View style={styles.inputView}>
-            <Image source={require("../assets/password.jpg")} />
+            <Feather name="lock" size={24} color="black" />
             <TextInput
               placeholder="Password"
               style={styles.input}
@@ -63,9 +64,13 @@ const LoginScreen = ({ navigation }) => {
           </TouchableOpacity>
 
           <View style={[styles.orYouSign]}>
-            <Text style={[styles.dotdot]}>-------------</Text>
+            <View
+              style={{ height: 1, width: 120, backgroundColor: "#4B4B4B" }}
+            />
             <Text style={[styles.signinwith]}>Or Sign In with</Text>
-            <Text style={[styles.dotdot]}>-------------</Text>
+            <View
+              style={{ height: 1, width: 120, backgroundColor: "#4B4B4B" }}
+            />
           </View>
 
           <View style={[styles.signwith]}>
@@ -111,33 +116,34 @@ const styles = StyleSheet.create({
     flex: 0.9,
   },
   Image: {
-    height: 163,
-    width: 164,
+    height: 123,
+    width: 124,
     alignSelf: "center",
     marginBottom: 20,
     marginTop: 30,
   },
   welcomeText: {
-    fontSize: 36,
+    fontSize: 24,
     fontWeight: "500",
     alignSelf: "center",
-    marginBottom: 15,
+    marginBottom: 10,
+    lineHeight: 36,
   },
   createText: {
-    fontSize: 24,
+    fontSize: 14,
     fontWeight: "400",
     alignSelf: "center",
-    marginBottom: 15,
+    marginBottom: 10,
+    lineHeight: 21,
   },
   inputView: {
     flexDirection: "row",
-    marginHorizontal: 12,
+    marginHorizontal: 15,
     borderRadius: 15,
     borderWidth: 1,
     paddingLeft: 10,
     height: 50,
     marginTop: 20,
-    fontSize: 18,
     borderColor: "lightgrey",
     alignItems: "center",
 
@@ -160,34 +166,44 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 5,
     justifyContent: "center",
-    paddingLeft: 200,
+    paddingLeft: 235,
     color: "#000000",
+    fontWeight: "500",
   },
   button: {
     backgroundColor: "#000000",
     justifyContent: "center",
     alignItems: "center",
-    height: 55,
+    height: 45,
+    width: 140,
     marginBottom: 15,
-    marginHorizontal: 90,
+    marginHorizontal: 123,
     borderRadius: 30,
     borderWidth: 1,
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: "600",
     color: "white",
-
+    lineHeight: 21,
     alignItems: "center",
   },
   orYouSign: {
     flexDirection: "row",
     justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+    marginBottom: 22,
   },
   signinwith: {
     color: "grey",
-    fontSize: 18,
+    fontSize: 12,
+    justifyContent: "center",
+
     alignItems: "center",
+    lineHeight: 18,
+    paddingLeft: 5,
+    paddingRight: 5,
   },
   dotdot: {
     color: "grey",
@@ -218,13 +234,15 @@ const styles = StyleSheet.create({
     elevation: 24,
   },
   Warn: {
-    fontSize: 18,
-    fontWeight: 500,
+    fontSize: 12,
+    fontWeight: "600",
     marginTop: 8,
     color: "grey",
   },
   signin: {
-    fontSize: 20,
+    fontSize: 12,
     color: "#000000",
+    fontWeight: "600",
+    lineHeight: 18,
   },
 });

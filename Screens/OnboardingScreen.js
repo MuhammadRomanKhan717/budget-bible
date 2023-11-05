@@ -19,12 +19,16 @@ const OnboardingScreen = ({ navigation }) => {
     }
   };
   return (
-    <Swiper
-      index={nextScreen}
-      onIndexChanged={(i) => setNextScreen(i)}
-      style={styles.wrapper}
+    <TouchableOpacity
+      activeOpacity={1}
+      style={styles.mainView}
+      onPress={() => setNextScreen(nextScreen + 1)}
     >
-      <TouchableWithoutFeedback style={styles.mainView}>
+      <Swiper
+        index={nextScreen}
+        onIndexChanged={(i) => setNextScreen(i)}
+        style={styles.wrapper}
+      >
         <View style={styles.ComponentView}>
           <View style={styles.ImageView}>
             <Image
@@ -45,13 +49,15 @@ const OnboardingScreen = ({ navigation }) => {
           </View>
 
           <View style={styles.buttonView}>
-            <TouchableOpacity onPress={nextButtons} style={[styles.button]}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("login")}
+              style={[styles.button]}
+            >
               <Text style={[styles.buttonText]}>Start Your Free Trial</Text>
             </TouchableOpacity>
           </View>
         </View>
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback style={styles.mainView}>
+
         <View style={styles.ComponentView}>
           <View style={styles.ImageView}>
             <Image
@@ -68,13 +74,14 @@ const OnboardingScreen = ({ navigation }) => {
             </Text>
           </View>
           <View style={styles.buttonView}>
-            <TouchableOpacity onPress={nextButtons} style={[styles.button]}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("login")}
+              style={[styles.button]}
+            >
               <Text style={[styles.buttonText]}>Start Your Free Trial</Text>
             </TouchableOpacity>
           </View>
         </View>
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback style={styles.mainView}>
         <View style={styles.ComponentView}>
           <View style={styles.ImageView}>
             <Image
@@ -92,13 +99,14 @@ const OnboardingScreen = ({ navigation }) => {
             </Text>
           </View>
           <View style={styles.buttonView}>
-            <TouchableOpacity onPress={nextButtons} style={[styles.button]}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("login")}
+              style={[styles.button]}
+            >
               <Text style={[styles.buttonText]}>Start Your Free Trial</Text>
             </TouchableOpacity>
           </View>
         </View>
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback style={styles.mainView}>
         <View style={styles.ComponentView}>
           <View style={styles.ImageView}>
             <Image
@@ -123,8 +131,8 @@ const OnboardingScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         </View>
-      </TouchableWithoutFeedback>
-    </Swiper>
+      </Swiper>
+    </TouchableOpacity>
   );
 };
 
