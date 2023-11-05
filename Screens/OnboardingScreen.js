@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     borderWidth: 1,
     borderColor: "#0000",
-    marginTop: 40,
+    marginTop: 60,
   },
   buttonText: {
     fontSize: 16,
