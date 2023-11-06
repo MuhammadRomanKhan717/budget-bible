@@ -7,7 +7,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import { MaterialIcons, Ionicons } from "@expo/vector-icons";
+import { Feather, Ionicons } from "@expo/vector-icons";
 import React from "react";
 
 const ProfileScreen = ({ props }) => {
@@ -16,10 +16,7 @@ const ProfileScreen = ({ props }) => {
     <SafeAreaView>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.openDrawer()}>
-          <Image
-            style={styles.headerImage}
-            source={require("../assets/bytesize_menu.png")}
-          />
+          <Feather name="menu" size={24} color="black" />
         </TouchableOpacity>
         <View style={styles.profilText}>
           <Text style={styles.headerText}>Profile</Text>
