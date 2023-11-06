@@ -86,7 +86,16 @@ const AllocateYourFriend = ({ props }) => {
         </View>
       </View>
       <View>
-        <Text style={{ fontSize: 27.67, alignSelf: "center" }}>
+        <Text
+          style={{
+            fontSize: 27.67,
+            alignSelf: "center",
+            lineHeight: 41.5,
+            fontWeight: "400",
+            textAlign: "center",
+            marginTop: 12,
+          }}
+        >
           A Look Ahead
         </Text>
       </View>
@@ -95,10 +104,11 @@ const AllocateYourFriend = ({ props }) => {
           height: 80,
           width: 300,
           justifyContent: "center",
-          alignSelf: "center",
+          marginHorizontal: 57,
+          marginTop: 1,
         }}
       >
-        <Text style={{ fontSize: 18, justifyContent: "center" }}>
+        <Text style={styles.disription}>
           If you personal allowance stays at 40% and your remain the same, your
           yearly snapshot is shown below
         </Text>
@@ -107,9 +117,10 @@ const AllocateYourFriend = ({ props }) => {
         <Text
           style={{
             fontSize: 14,
-            fontWeight: "600",
-            paddingLeft: 10,
+            fontWeight: "400",
+            paddingLeft: 19,
             paddingBottom: 5,
+            lineHeight: 21,
           }}
         >
           Personal Allowance: $6000
@@ -119,9 +130,11 @@ const AllocateYourFriend = ({ props }) => {
         <Text
           style={{
             fontSize: 14,
-            fontWeight: "600",
-            paddingLeft: 10,
+            fontWeight: "400",
+            paddingLeft: 19,
+            paddingRight: 3,
             paddingBottom: 5,
+            lineHeight: 21,
           }}
         >
           Savings: $9000
@@ -150,39 +163,24 @@ const AllocateYourFriend = ({ props }) => {
           </TouchableOpacity>
         </View>
       </Modal>
-      <View style={{ flexDirection: "row" }}>
+      <View
+        style={{
+          paddingTop: 15,
+        }}
+      >
         <Text
           style={{
             fontSize: 14,
-            fontWeight: "600",
-            paddingLeft: 10,
+            fontWeight: "400",
+            paddingLeft: 19,
             paddingBottom: 5,
+            lineHeight: 21,
           }}
         >
-          Recap:
+          Recap: You have a personal allowance that you can spend as freely as
+          you’d like , your expenses are taken care of and your net worth is
+          growing rapidly!
         </Text>
-
-        <View>
-          <Text
-            style={{
-              fontSize: 14,
-              fontWeight: "400",
-            }}
-          >
-            You have a personal allowance that you
-          </Text>
-        </View>
-      </View>
-      <View
-        style={{
-          fontSize: 14,
-          fontWeight: "600",
-          paddingLeft: 10,
-        }}
-      >
-        <Text>can spend as freely as you’d like , your expenses</Text>
-        <Text> are taken care of and your net worth is growing</Text>
-        <Text>rapidly!</Text>
       </View>
     </SafeAreaView>
   );
@@ -236,12 +234,19 @@ const styles = StyleSheet.create({
     marginTop: "57%",
     marginLeft: "20%",
   },
+  disription: {
+    fontSize: 14,
+    justifyContent: "center",
+    lineHeight: 21,
+    textAlign: "center",
+    fontWeight: "300",
+  },
   modalView: {
     margin: 50,
     backgroundColor: "white",
     borderRadius: 5,
     padding: 35,
-    alignItems: "center",
+
     shadowColor: "black",
     shadowOffset: {
       width: 0,
@@ -252,6 +257,10 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   modalText: {
+    fontSize: 14,
+    fontWeight: "400",
+    paddingBottom: 5,
+    lineHeight: 21,
     textAlign: "center",
   },
 });
