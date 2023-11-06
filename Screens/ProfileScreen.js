@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import React from "react";
 
 const ProfileScreen = ({ props }) => {
@@ -35,17 +36,17 @@ const ProfileScreen = ({ props }) => {
       </View>
       <View style={styles.persnolInfoView}>
         <TouchableOpacity style={styles.persnolInfo}>
-          <Text>Name</Text>
+          <Text style={styles.inputText}>Name</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.persnolInfo}>
-          <Text>Postal Code</Text>
+          <Text style={styles.inputText}>Postal Code</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.persnolInfo}>
-          <Text>Gmail</Text>
+          <Text style={styles.inputText}>Gmail</Text>
         </TouchableOpacity>
       </View>
       <View>
-        <Text style={styles.PerefrencesText}>Perefrences</Text>
+        <Text style={styles.headerPerefrences}>Perefrences</Text>
       </View>
       <View>
         <View style={styles.perefrencesView}>
@@ -53,11 +54,8 @@ const ProfileScreen = ({ props }) => {
             style={styles.perefrencesText}
             onPress={() => navigation.navigate("allocateTourFunds")}
           >
-            <Text>My Balance</Text>
-            <Image
-              style={styles.arrow}
-              source={require("../assets/eva_arrow-ios.png")}
-            />
+            <Text style={styles.inputText}>My Balance</Text>
+            <Ionicons name="chevron-forward" size={24} color="grey" />
           </TouchableOpacity>
         </View>
         <View style={styles.perefrencesView}>
@@ -65,11 +63,8 @@ const ProfileScreen = ({ props }) => {
             style={styles.perefrencesText}
             onPress={() => navigation.navigate("setting")}
           >
-            <Text>Settings</Text>
-            <Image
-              style={styles.arrow}
-              source={require("../assets/eva_arrow-ios.png")}
-            />
+            <Text style={styles.inputText}>Settings</Text>
+            <Ionicons name="chevron-forward" size={24} color="grey" />
           </TouchableOpacity>
         </View>
         <View style={styles.perefrencesView}>
@@ -77,11 +72,8 @@ const ProfileScreen = ({ props }) => {
             style={styles.perefrencesText}
             onPress={() => navigation.navigate("OnboardingScreen")}
           >
-            <Text>Log out</Text>
-            <Image
-              style={styles.arrow}
-              source={require("../assets/eva_arrow-ios.png")}
-            />
+            <Text style={styles.inputText}>Log out</Text>
+            <Ionicons name="chevron-forward" size={24} color="grey" />
           </TouchableOpacity>
         </View>
       </View>
@@ -121,46 +113,42 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#B8B8B8",
     paddingBottom: 10,
-    paddingLeft: 26,
+    paddingLeft: 44,
+    lineHeight: 24,
+    fontWeight: "400",
   },
   persnolInfoView: {
-    paddingHorizontal: 15,
+    paddingHorizontal: 24,
   },
   persnolInfo: {
     height: 57,
     paddingLeft: 12,
     justifyContent: "center",
-    marginBottom: 3,
+    marginBottom: 5,
 
     borderRadius: 15,
+    backgroundColor: "#FFFFFF",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "grey",
+    shadowOpacity: 0.12,
+    shadowRadius: 3,
+    elevation: 5,
   },
-  PerefrencesText: {
+  headerPerefrences: {
     fontSize: 16,
     color: "#B8B8B8",
     paddingBottom: 12,
-    paddingLeft: 26,
+    paddingLeft: 44,
     paddingTop: 30,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
-    shadowOpacity: 0.53,
-    shadowRadius: 13.97,
-
-    elevation: 21,
+    lineHeight: 24,
+    fontWeight: "400",
   },
+  PerefrencesText: {},
   perefrencesView: {
-    paddingHorizontal: 15,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 10,
-      height: 10,
-    },
-    shadowOpacity: 0.53,
-    shadowRadius: 13.97,
-
-    elevation: 91,
+    paddingHorizontal: 24,
   },
   perefrencesText: {
     flexDirection: "row",
@@ -168,14 +156,25 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingBottom: 10,
     paddingLeft: 26,
-    marginBottom: 5,
+    marginBottom: 15,
     borderRadius: 15,
     height: 57,
     width: "99%",
+    backgroundColor: "#FFFFFF",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "grey",
+
+    shadowOpacity: 0.12,
+    shadowRadius: 5,
+    elevation: 5,
   },
 
-  arrow: {
-    height: 32,
-    width: 28,
+  inputText: {
+    fontSize: 16,
+    lineHeight: 24,
+    fontWeight: "400",
   },
 });
