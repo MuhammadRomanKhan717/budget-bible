@@ -81,7 +81,7 @@ const PayPeriodScreen = ({ navigation }) => {
               <Image source={require("../assets/Group6867.png")} />
               <Text>Grocery</Text>
             </View>
-            <Text>12/12</Text>
+            <Text style={{ marginRight: 45 }}>12/12</Text>
             <Text>$50</Text>
           </View>
           <View style={styles.Expense}>
@@ -89,7 +89,7 @@ const PayPeriodScreen = ({ navigation }) => {
               <Image source={require("../assets/Group6868.png")} />
               <Text>Gas</Text>
             </View>
-            <Text>12/12</Text>
+            <Text style={{ marginRight: 15 }}>12/12</Text>
             <Text>$50</Text>
           </View>
           <View style={styles.Expense}>
@@ -97,7 +97,7 @@ const PayPeriodScreen = ({ navigation }) => {
               <Image source={require("../assets/Group6869.png")} />
               <Text>Internet</Text>
             </View>
-            <Text>12/12</Text>
+            <Text style={{ marginRight: 40 }}>12/12</Text>
             <Text>$50</Text>
           </View>
           <View style={styles.Expense}>
@@ -105,7 +105,7 @@ const PayPeriodScreen = ({ navigation }) => {
               <Image source={require("../assets/Group6870.png")} />
               <Text>Electricity</Text>
             </View>
-            <Text>12/12</Text>
+            <Text style={{ marginRight: 50 }}>12/12</Text>
             <Text>$50</Text>
           </View>
           <View style={styles.Expense}>
@@ -113,7 +113,8 @@ const PayPeriodScreen = ({ navigation }) => {
               <Image source={require("../assets/Group6871.png")} />
               <Text>Car Insurance</Text>
             </View>
-            <Text>12/12</Text>
+
+            <Text style={{ marginRight: 75 }}>12/12</Text>
             <Text>$50</Text>
           </View>
           <View style={styles.Expense}>
@@ -121,7 +122,7 @@ const PayPeriodScreen = ({ navigation }) => {
               <Image source={require("../assets/Group6872.png")} />
               <Text>Phone</Text>
             </View>
-            <Text>12/12</Text>
+            <Text style={{ marginRight: 22 }}>12/12</Text>
             <Text>$50</Text>
           </View>
         </View>
@@ -135,7 +136,6 @@ export default PayPeriodScreen;
 const styles = StyleSheet.create({
   mainView: {
     flex: 1,
-    // backgroundColor: "green",
   },
   bottomView: {
     flexDirection: "row",
@@ -151,8 +151,7 @@ const styles = StyleSheet.create({
     width: 90,
     marginTop: 45,
     backgroundColor: "#FFD700",
-    borderRadius: 31,
-    borderWidth: 1,
+    borderRadius: 41,
     marginLeft: 110,
   },
   headerView: {
@@ -183,8 +182,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "black",
     justifyContent: "space-between",
-    paddingHorizontal: 18,
-    marginHorizontal: 20,
+    paddingHorizontal: 15,
     width: 335,
     height: 39,
     alignSelf: "center",
@@ -198,7 +196,7 @@ const styles = StyleSheet.create({
     width: 335,
     alignSelf: "center",
     justifyContent: "space-between",
-    marginTop: 15,
+    marginTop: 20,
   },
   DateText: {
     color: "white",
@@ -208,8 +206,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-
-    paddingHorizontal: 15,
+    marginHorizontal: 15,
+    // paddingHorizontal: 15,
   },
   IOView: {
     shadowColor: "#000000",
@@ -222,20 +220,12 @@ const styles = StyleSheet.create({
     elevation: 24,
 
     height: 88,
-    paddingHorizontal: 18,
-    marginHorizontal: 20,
+    marginHorizontal: 15,
     flexDirection: "row",
 
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
   },
-  IOView2: {
-    // height: "50%",
-    // flexDirection: "column",
-    // borderRadius: 10,
-    // paddingRight: 12,
-    // borderColor: "gray",
-    // justifyContent: "space-evenly",
-  },
+
   IOText: {
     fontSize: 18,
   },
