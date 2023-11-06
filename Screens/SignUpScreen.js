@@ -9,8 +9,8 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
-// import { UserOutlined } from "@ant-design/icons";
+import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
+import { UserOutlined } from "@ant-design/icons";
 import React from "react";
 
 const SignUpScreen = ({ navigation }) => {
@@ -50,7 +50,11 @@ const SignUpScreen = ({ navigation }) => {
             />
           </View>
           <View style={styles.inputView}>
-            <Image source={require("../assets/carbon_email.png")} />
+            <MaterialCommunityIcons
+              name="email-outline"
+              size={24}
+              color="black"
+            />
             <TextInput
               placeholder="Email"
               style={styles.input}
@@ -145,21 +149,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginHorizontal: 15,
     borderRadius: 15,
-    borderWidth: 1,
     paddingLeft: 10,
     height: 50,
     marginTop: 20,
     borderColor: "lightgrey",
     alignItems: "center",
-
-    shadowColor: "#000000",
+    backgroundColor: "#FFFFFF",
     shadowOffset: {
       width: 0,
-      height: 18,
+      height: 5,
     },
     shadowOpacity: 0.25,
-    shadowRadius: 10.0,
-    elevation: 16,
+    shadowRadius: 15,
+    elevation: 5,
   },
   input: {
     paddingLeft: 10,
@@ -216,22 +218,20 @@ const styles = StyleSheet.create({
     marginTop: 22,
   },
   bottomlink: {
-    backgroundColor: "#FFFFFF",
     justifyContent: "center",
     alignItems: "center",
     height: 36,
     width: 70,
     marginBottom: 15,
     borderRadius: 31,
-    borderWidth: 1,
-    shadowColor: "#000000",
+    backgroundColor: "#FFFFFF",
     shadowOffset: {
       width: 0,
-      height: 18,
+      height: 5,
     },
     shadowOpacity: 0.25,
-    shadowRadius: 20.0,
-    elevation: 24,
+    shadowRadius: 15,
+    elevation: 5,
   },
   Warn: {
     fontSize: 12,

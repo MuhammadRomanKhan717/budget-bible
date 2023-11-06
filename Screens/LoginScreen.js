@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 
 const LoginScreen = ({ navigation }) => {
@@ -28,7 +29,11 @@ const LoginScreen = ({ navigation }) => {
           <Text style={styles.createText}>Login to your account</Text>
 
           <View style={styles.inputView}>
-            <Image source={require("../assets/carbon_email.png")} />
+            <MaterialCommunityIcons
+              name="email-outline"
+              size={24}
+              color="black"
+            />
             <TextInput
               placeholder="Email"
               style={styles.input}
@@ -53,7 +58,7 @@ const LoginScreen = ({ navigation }) => {
               onPress={() => navigation.navigate("Forget")}
               style={[styles.Warn]}
             >
-              <Text style={[styles.signin]}> Forget Password?</Text>
+              <Text style={[styles.pawdText]}> Forget Password?</Text>
             </TouchableOpacity>
           </View>
           <TouchableOpacity
@@ -140,21 +145,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginHorizontal: 15,
     borderRadius: 15,
-    borderWidth: 1,
     paddingLeft: 10,
     height: 50,
     marginTop: 20,
     borderColor: "lightgrey",
+    backgroundColor: "#FFFFFF",
     alignItems: "center",
-
-    shadowColor: "#000000",
     shadowOffset: {
       width: 0,
-      height: 18,
+      height: 5,
     },
     shadowOpacity: 0.25,
-    shadowRadius: 20.0,
-    elevation: 24,
+    shadowRadius: 15,
+    elevation: 5,
   },
   input: {
     paddingLeft: 10,
@@ -223,21 +226,27 @@ const styles = StyleSheet.create({
     width: 70,
     marginBottom: 15,
     borderRadius: 31,
-    borderWidth: 1,
-    shadowColor: "#000000",
     shadowOffset: {
       width: 0,
-      height: 18,
+      height: 5,
     },
     shadowOpacity: 0.25,
-    shadowRadius: 20.0,
-    elevation: 24,
+    shadowRadius: 15,
+    elevation: 5,
   },
   Warn: {
     fontSize: 12,
     fontWeight: "600",
     marginTop: 8,
     color: "grey",
+  },
+  pawdText: {
+    color: "#5C5353",
+    fontSize: 12,
+    fontWeight: "500",
+    lineHeight: 18,
+    height: 18,
+    width: 107,
   },
   signin: {
     fontSize: 12,
