@@ -153,6 +153,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFD700",
     borderRadius: 41,
     marginLeft: 110,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 50,
+    elevation: 5,
   },
   headerView: {
     paddingLeft: 8,
@@ -170,12 +177,19 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   topComponent: {
-    borderWidth: 1,
     borderRadius: 10,
+    backgroundColor: "white",
     height: 127,
     width: 335,
     alignSelf: "center",
     marginTop: 43,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 50,
+    elevation: 5,
   },
   dateTextView: {
     flexDirection: "row",
@@ -190,13 +204,20 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 10,
   },
   BottomComponent: {
-    borderWidth: 1,
     borderRadius: 10,
+    backgroundColor: "white",
     height: 348,
     width: 335,
     alignSelf: "center",
     justifyContent: "space-between",
     marginTop: 20,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 10,
+    elevation: 5,
   },
   DateText: {
     color: "white",
@@ -207,7 +228,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginHorizontal: 15,
-    // paddingHorizontal: 15,
   },
   IOView: {
     shadowColor: "#000000",
