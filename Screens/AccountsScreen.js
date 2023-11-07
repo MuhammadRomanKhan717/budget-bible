@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   shadow,
 } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import AccountDetail from "../Components/AccountDetail";
 
@@ -17,13 +18,10 @@ const AccountsScreen = ({ navigation }) => {
         <View style={[styles.headerView]}>
           <View style={{ paddingTop: 12 }}>
             <TouchableOpacity onPress={() => navigation.openDrawer()}>
-              <Image
-                style={{ height: 28, width: 28 }}
-                source={require("../assets/eva_arrow-back-outlineWhiteColor.png")}
-              />
+              <Ionicons name="arrow-back" size={24} color="white" />
             </TouchableOpacity>
           </View>
-          <View>
+          <View style={{ paddingTop: 14 }}>
             <Text style={styles.AccountText}>ACCOUNTS</Text>
           </View>
           <View style={{ paddingTop: 12 }}>
@@ -36,13 +34,29 @@ const AccountsScreen = ({ navigation }) => {
         <View style={{ paddingBottom: 42 }}>
           <AccountDetail />
         </View>
-        <View style={[styles.bottomDetail, shadow]}>
+        <View style={[styles.bottomDetail]}>
           <View style={styles.bottomSavingsDetail}>
             <View>
-              <Text style={{ fontSize: 12, paddingBottom: 7 }}>
+              <Text
+                style={{
+                  alignSelf: "center",
+                  fontSize: 12,
+                  lineHeight: 18,
+                  fontWeight: "500",
+                }}
+              >
                 Total Savings
               </Text>
-              <Text style={{ fontWeight: "700", fontSize: 16 }}>$ 2000</Text>
+              <Text
+                style={{
+                  alignSelf: "center",
+                  fontSize: 16,
+                  lineHeight: 24,
+                  fontWeight: "700",
+                }}
+              >
+                $ 2000
+              </Text>
             </View>
             <TouchableOpacity style={styles.shadow}>
               <View style={styles.BottomImage}>
@@ -63,36 +77,38 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     width: 375,
     height: 266,
-    borderWidth: 1,
-    borderRadius: 10,
-  },
-  shadow: {
-    shadowColor: "#000", // Shadow color
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    shadowColor: "grey", // Shadow color
     shadowOffset: {
-      width: 5, // Horizontal offset
-      height: 8, // Vertical offset
+      width: 0, // Horizontal offset
+      height: 5, // Vertical offset
     },
-    shadowOpacity: 0.5, // Opacity (0.0 - 1.0)
+    shadowOpacity: 0.25, // Opacity (0.0 - 1.0)
     shadowRadius: 6, // Radius
-    elevation: 4, // Android elevation (for shadow)
+    elevation: 5,
   },
+
   AccountText: {
-    fontSize: 16,
+    fontSize: 14,
     color: "white",
     alignSelf: "center",
-    fontWeight: "600",
+    fontWeight: "500",
+    lineHeight: 21,
   },
   AccountAmmountText: {
     fontSize: 28,
     color: "white",
     alignSelf: "center",
     fontWeight: "600",
+    lineHeight: 42,
   },
   totalAmmountText: {
-    fontSize: 14,
+    fontSize: 12,
     color: "white",
     alignSelf: "center",
     fontWeight: "500",
+    lineHeight: 18,
   },
   savingDetail: {
     flexDirection: "row",
@@ -101,14 +117,7 @@ const styles = StyleSheet.create({
     paddingTop: 22,
     paddingBottom: 12,
   },
-  AmountsavingDetail: {
-    borderWidth: 0.7,
-    borderRadius: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginHorizontal: 10,
-    height: 45,
-  },
+
   innerAmountText: {
     flexDirection: "row",
     justifyContent: "space-evenly",
@@ -119,17 +128,23 @@ const styles = StyleSheet.create({
   bottomDetail: {
     height: 86,
     justifyContent: "center",
-    borderWidth: 0.7,
+    backgroundColor: "white",
     borderRadius: 10,
     marginHorizontal: 10,
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "grey",
+    shadowOpacity: 0.22,
+    shadowRadius: 5,
+    elevation: 5,
   },
   bottomSavingsDetail: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     marginHorizontal: 20,
-
-    // alignContent: "center",
   },
   BottomImage: {
     backgroundColor: "#FFD700",
@@ -138,5 +153,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
+    borderRadius: 10,
+    marginHorizontal: 10,
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "grey",
+    shadowOpacity: 0.22,
+    shadowRadius: 5,
+    elevation: 5,
   },
 });
