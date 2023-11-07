@@ -17,9 +17,8 @@ const OTPscreen = ({ navigation }) => {
       </View>
       <View style={styles.AllertText}>
         <Text style={styles.Text}>
-          Enter the Verification Code we Just Send
+          Enter the Verification Code we Just Send You To Your Email Address
         </Text>
-        <Text style={styles.Text}> You To Your Email Address</Text>
       </View>
       <View>
         {/* <OtpInputs
@@ -42,9 +41,9 @@ const OTPscreen = ({ navigation }) => {
           paddingTop: 12,
         }}
       >
-        <Text>Didn’t get any code ?</Text>
+        <Text style={styles.didnotSendText}>Didn’t get any code ?</Text>
         <TouchableOpacity>
-          <Text style={{ paddingLeft: 10 }}>Resend</Text>
+          <Text style={styles.resendButton}>Resend</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -65,31 +64,47 @@ const styles = StyleSheet.create({
     fontSize: 28.52,
     fontWeight: "400",
     paddingTop: 35,
+    paddingBottom: 10,
   },
   AllertText: {
     height: 44,
     width: 333,
-    paddingHorizontal: 21,
-    alignSelf: "center",
+    margingHorizontal: 21,
+    textAlign: "center",
+    marginLeft: 20,
   },
   Text: {
     lineHeight: 21.72,
     fontSize: 14.48,
     fontWeight: "400",
-    paddingLeft: 12,
+    // paddingLeft: 12,
+    textAlign: "center",
   },
   button: {
     backgroundColor: "#FFD700",
     justifyContent: "center",
     alignItems: "center",
     height: 50,
-    marginHorizontal: 47,
+    marginHorizontal: 66,
     borderRadius: 41,
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 18,
+    lineHeight: 18,
     fontWeight: "600",
     color: "white",
     alignItems: "center",
+    letterSpacing: -1,
+  },
+  didnotSendText: {
+    fontSize: 14,
+    lineHeight: 21,
+    fontWeight: "500",
+    alignItems: "center",
+  },
+  resendButton: {
+    paddingLeft: 5,
+    fontWeight: "600",
+    paddingTop: 3,
   },
 });
