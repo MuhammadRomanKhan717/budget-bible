@@ -53,10 +53,9 @@ export default ConfirmCodeScreen;
 
 const styles = StyleSheet.create({
   headerView: {
-    marginTop: 50,
-    paddingBottom: 15,
-    alignItems: "center",
-    justifyContent: "center",
+    marginTop: 60,
+    paddingBottom: 10,
+    marginLeft: 19.92,
     flexDirection: "row",
   },
 
@@ -64,6 +63,7 @@ const styles = StyleSheet.create({
     fontSize: 28.52,
     fontWeight: "400",
     paddingTop: 35,
+    lineHeight: 42.78,
   },
   inputView: {
     flexDirection: "row",
@@ -87,22 +87,34 @@ const styles = StyleSheet.create({
   },
   input: {
     paddingLeft: 10,
-    fontSize: 20,
+    fontSize: 14.7,
     width: "98%",
     height: "90%",
+    fontWeight: "400",
+    lineHeight: 22.04,
   },
   button: {
     backgroundColor: "#FFD700",
     justifyContent: "center",
     alignItems: "center",
     height: 50,
-    marginHorizontal: 47,
+    marginHorizontal: 67,
     borderRadius: 41,
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowColor: "grey",
+    shadowOpacity: 0.15,
+    shadowRadius: 5,
+    elevation: 5,
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "600",
     color: "white",
     alignItems: "center",
+    lineHeight: 18,
+    letterSpacing: -1,
   },
 });
