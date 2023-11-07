@@ -7,31 +7,29 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import { Octicons } from "@expo/vector-icons";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { CircularProgressBase } from "react-native-circular-progress-indicator";
 const DashboardSCreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.openDrawer()}>
-          <Image
-            style={styles.headerImage}
-            source={require("../assets/bytesize_menu.png")}
-          />
+          <Ionicons name="menu-sharp" size={26} color="black" />
         </TouchableOpacity>
         <Text style={styles.headerText}>Dashboard</Text>
         <TouchableOpacity>
-          <Image
-            style={styles.headerImage}
-            source={require("../assets/uil_schedule.png")}
+          <MaterialCommunityIcons
+            name="calendar-blank-outline"
+            size={28}
+            color="black"
           />
         </TouchableOpacity>
       </View>
       <View style={[styles.mainProgressBarView, styles.shadow]}>
         <View style={styles.curcularBarView}>
           <View style={styles.barUpperPercentage}>
-            <Image
-              source={require("../assets/carbon_overflow-menu-horizontal.png")}
-            />
+            <Ionicons name="ellipsis-horizontal" size={26} color="black" />
           </View>
           <CircularProgressBase
             value={120}
@@ -60,46 +58,46 @@ const DashboardSCreen = ({ navigation }) => {
             </Text>
             <View style={{ flexDirection: "row" }}>
               <TouchableOpacity style={styles.weeklyDeys}>
-                <Text style={{ alignSelf: "center" }}>S</Text>
+                <Text style={styles.weeklyDeysText}>S</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.weeklyDeys}>
-                <Text style={{ alignSelf: "center" }}>M</Text>
+                <Text style={styles.weeklyDeysText}>M</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.weeklyDeys}>
-                <Text style={{ alignSelf: "center" }}>T</Text>
+                <Text style={styles.weeklyDeysText}>T</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.weeklyDeys2}>
-                <Text style={{ alignSelf: "center" }}>W</Text>
+                <Text style={styles.weeklyDeysText}>W</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.weeklyDeys2}>
-                <Text style={{ alignSelf: "center" }}>T</Text>
+                <Text style={styles.weeklyDeysText}>T</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.weeklyDeys2}>
-                <Text style={{ alignSelf: "center" }}>F</Text>
+                <Text style={styles.weeklyDeysText}>F</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.weeklyDeys2}>
-                <Text style={{ alignSelf: "center" }}>S</Text>
+                <Text style={styles.weeklyDeysText}>S</Text>
               </TouchableOpacity>
             </View>
           </View>
         </View>
       </View>
       <View style={styles.Transaction}>
-        <Text>Transactions</Text>
-        <Image source={require("../assets/carbon_add-alt.png")} />
+        <Text style={styles.TransactionText}>Transactions</Text>
+        <Octicons name="plus-circle" size={24} color="black" />
       </View>
-      <View style={{ alignSelf: "center", paddingTop: 20 }}>
-        <Text>Get Transactions Automatically</Text>
+      <View style={{ alignSelf: "center", paddingTop: 30 }}>
+        <Text style={styles.getTransactionText}>
+          Get Transactions Automatically
+        </Text>
       </View>
       <View style={{ paddingTop: 70, paddingLeft: 15 }}>
-        <Text style={{ fontSize: 18, fontWeight: "600" }}>
-          List of accounts
-        </Text>
+        <Text style={styles.listText}>List of accounts</Text>
         <Text style={{ fontSize: 12, color: "#A9A9A9", paddingTop: 7 }}>
           No accounts yet
         </Text>
       </View>
-      <View style={{ paddingTop: 60 }}>
+      <View style={{ paddingTop: 90 }}>
         <TouchableOpacity
           onPress={() => navigation.navigate("setting")}
           style={[styles.button]}
@@ -127,25 +125,25 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 20,
     fontWeight: "600",
-    paddingBottom: 30,
+    paddingBottom: 10,
+    lineHeight: 30,
+    textAlign: "center",
   },
   mainProgressBarView: {
-    borderWidth: 0.19,
+    backgroundColor: "white",
     borderRadius: 10,
     marginHorizontal: 20,
     marginVertical: 20,
-    paddingBottom: 10,
-  },
-  shadow: {
-    shadowColor: "#000", // Shadow color
     shadowOffset: {
-      width: 5, // Horizontal offset
-      height: 8, // Vertical offset
+      width: 0,
+      height: 5,
     },
-    shadowOpacity: 0.5, // Opacity (0.0 - 1.0)
-    shadowRadius: 6, // Radius
-    elevation: 4, // Android elevation (for shadow)
+    shadowColor: "grey",
+    shadowOpacity: 0.22,
+    shadowRadius: 5,
+    elevation: 5,
   },
+
   curcularBarView: {
     alignItems: "center",
   },
@@ -161,26 +159,64 @@ const styles = StyleSheet.create({
   },
   weeklyDeys: {
     marginLeft: 10,
-    // paddingRight: 10,
     height: 18,
     width: 18,
-    borderWidth: 1,
     borderRadius: 4,
+    backgroundColor: "#FFFFFF",
     justifyContent: "center",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "grey",
+    shadowOpacity: 0.22,
+    shadowRadius: 5,
+    elevation: 5,
+  },
+  weeklyDeysText: {
+    alignSelf: "center",
+    fontSize: 8,
+    textAlign: "center",
+    lineHeight: 12,
+    fontWeight: "400",
   },
   weeklyDeys2: {
     marginLeft: 10,
     backgroundColor: "#FFD700",
     height: 18,
     width: 18,
-    borderWidth: 1,
     borderRadius: 4,
     justifyContent: "center",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "grey",
+    shadowOpacity: 0.25,
+    shadowRadius: 15,
+    elevation: 5,
   },
   Transaction: {
     flexDirection: "row",
     justifyContent: "space-between",
     marginHorizontal: 20,
+  },
+  TransactionText: {
+    fontWeight: "500",
+    fontSize: 14,
+    textAlign: "center",
+    lineHeight: 21,
+  },
+  getTransactionText: {
+    fontWeight: "400",
+    fontSize: 12,
+    textAlign: "center",
+    lineHeight: 18,
+  },
+  listText: {
+    fontWeight: "500",
+    fontSize: 14,
+    lineHeight: 21,
   },
   button: {
     backgroundColor: "#FFD700",
@@ -189,6 +225,14 @@ const styles = StyleSheet.create({
     height: 50,
     marginHorizontal: 67,
     borderRadius: 41,
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "grey",
+    shadowOpacity: 0.25,
+    shadowRadius: 15,
+    elevation: 5,
   },
   buttonText: {
     fontSize: 16,
