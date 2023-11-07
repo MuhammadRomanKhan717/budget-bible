@@ -7,6 +7,9 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Octicons } from "@expo/vector-icons";
+
 import ExpensesComponent from "../Components/ExpensesComponent";
 
 const IncomeExpensesScreen = ({ navigation }) => {
@@ -34,17 +37,11 @@ const IncomeExpensesScreen = ({ navigation }) => {
 
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.openDrawer()}>
-          <Image
-            style={styles.headerImage}
-            source={require("../assets/bytesize_menu.png")}
-          />
+          <Ionicons name="menu-sharp" size={26} color="black" />
         </TouchableOpacity>
         <Text style={styles.headerText}>Income & Expenses</Text>
         <TouchableOpacity>
-          <Image
-            style={styles.headerImage}
-            source={require("../assets/carbon_add-alt.png")}
-          />
+          <Octicons name="plus-circle" size={24} color="black" />
         </TouchableOpacity>
       </View>
       <View style={styles.ModifyView}>
@@ -75,8 +72,15 @@ const styles = StyleSheet.create({
     marginTop: 45,
     backgroundColor: "#FFD700",
     borderRadius: 31,
-    borderWidth: 1,
     marginLeft: 110,
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "black",
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+    elevation: 5,
   },
   header: {
     flexDirection: "row",
@@ -94,13 +98,13 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
   ModifyView: {
-    borderWidth: 1,
-    borderRadius: 10,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
     backgroundColor: "black",
     width: 335,
     height: 69,
     justifyContent: "center",
     alignItems: "center",
-    marginHorizontal: 18,
+    marginHorizontal: 20,
   },
 });

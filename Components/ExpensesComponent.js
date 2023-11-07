@@ -43,23 +43,39 @@ export default ExpensesComponent;
 
 const styles = StyleSheet.create({
   cardView: {
-    borderWidth: 1,
     borderRadius: 10,
     width: 335,
     height: 93,
     paddingTop: 12,
     justifyContent: "center",
     justifyContent: "space-between",
-    marginHorizontal: 18,
+    marginHorizontal: 20,
     paddingLeft: 12,
     flexDirection: "row",
+    backgroundColor: "white",
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowColor: "grey",
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
+    elevation: 10,
   },
   imageView: {
     width: 70,
     height: 70,
-    borderWidth: 1,
     borderRadius: 10,
     justifyContent: "center",
+    backgroundColor: "white",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "black",
+    shadowOpacity: 0.3,
+    shadowRadius: 15,
+    elevation: 10,
   },
   cardDetial: {
     // backgroundColor: "grey",
