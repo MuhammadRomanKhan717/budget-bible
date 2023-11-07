@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
+import { Ionicons, FontAwesome5, AntDesign } from "@expo/vector-icons";
 import React from "react";
 
 const EditProfileScreen = ({ navigation }) => {
@@ -13,10 +14,7 @@ const EditProfileScreen = ({ navigation }) => {
     <SafeAreaView>
       <View style={styles.headerView}>
         <TouchableOpacity onPress={() => navigation.navigate("setting")}>
-          <Image
-            style={styles.TouchableOpacity}
-            source={require("../assets/eva_arrow-back-outline.png")}
-          />
+          <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
         <Text style={styles.headerText}>Edit Profile</Text>
       </View>
@@ -26,21 +24,21 @@ const EditProfileScreen = ({ navigation }) => {
       <View style={styles.ProfileImageView}>
         <Image
           style={styles.ProfileImage}
-          source={require("../assets/profileImage.png")}
+          source={require("../assets/Ellipse236.png")}
         />
       </View>
       <View style={styles.persnolInfoView}>
         <TouchableOpacity style={styles.persnolInfo}>
-          <Text style={{ paddingLeft: 20 }}>Name</Text>
+          <Text style={styles.inputText}>Name</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.persnolInfo}>
-          <Text style={{ paddingLeft: 20 }}>Postal Code</Text>
+          <Text style={styles.inputText}>Postal Code</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.persnolInfo}>
-          <Text style={{ paddingLeft: 20 }}>Gmail</Text>
+          <Text style={styles.inputText}>Gmail</Text>
         </TouchableOpacity>
       </View>
-      <View style={{ paddingTop: 125 }}>
+      <View style={{ paddingTop: 150 }}>
         <TouchableOpacity
           onPress={() => navigation.navigate("setting")}
           style={[styles.button]}
@@ -68,13 +66,17 @@ const styles = StyleSheet.create({
   headerText: {
     paddingLeft: 100,
     fontSize: 20,
-    fontWeight: "500",
+    fontWeight: "400",
     paddingBottom: 55,
+    lineHeight: 30,
+    textAlign: "center",
   },
   AccountsTitleText: {
     paddingLeft: 20,
-    fontSize: 22,
-    fontWeight: "500",
+    fontSize: 16,
+    fontWeight: "400",
+    lineHeight: 16,
+    letterSpacing: -1,
   },
   ProfileImageView: {
     paddingTop: 32,
@@ -86,10 +88,19 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   persnolInfoView: {
-    paddingHorizontal: 15,
+    paddingHorizontal: 35,
   },
+  inputText: {
+    paddingLeft: 20,
+    color: "#ACACAC",
+    fontWeight: "400",
+    fontSize: 16,
+    lineHeight: 16,
+    letterSpacing: -1,
+  },
+
   persnolInfo: {
-    height: 57,
+    height: 39,
     paddingLeft: 12,
     justifyContent: "center",
     backgroundColor: "#EBEBEB",
@@ -101,13 +112,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: 50,
-    marginHorizontal: 47,
+    marginHorizontal: 66,
     borderRadius: 41,
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "600",
     color: "white",
     alignItems: "center",
+    lineHeight: 18,
+    letterSpacing: -1,
   },
 });
