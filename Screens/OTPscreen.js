@@ -87,6 +87,14 @@ const styles = StyleSheet.create({
     height: 50,
     marginHorizontal: 66,
     borderRadius: 41,
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowColor: "grey",
+    shadowOpacity: 0.15,
+    shadowRadius: 5,
+    elevation: 5,
   },
   buttonText: {
     fontSize: 18,
