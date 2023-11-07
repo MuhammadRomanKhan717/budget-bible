@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
+import { Ionicons, FontAwesome5, AntDesign } from "@expo/vector-icons";
+
 import React from "react";
 
 const SettingsScreen = ({ navigation }) => {
@@ -13,10 +15,7 @@ const SettingsScreen = ({ navigation }) => {
     <SafeAreaView>
       <View style={styles.headerView}>
         <TouchableOpacity onPress={() => navigation.navigate("profile")}>
-          <Image
-            style={styles.TouchableOpacity}
-            source={require("../assets/eva_arrow-back-outline.png")}
-          />
+          <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
         <Text style={styles.headerText}>Settings</Text>
       </View>
@@ -28,9 +27,9 @@ const SettingsScreen = ({ navigation }) => {
           style={styles.chngePasswd}
           onPress={() => navigation.navigate("ChangePassword")}
         >
-          <Image source={require("../assets/carbon_password.png")} />
+          <Ionicons name="md-key-outline" size={24} color="black" />
           <Text style={styles.chanPasswodText}>Change Password</Text>
-          <Image source={require("../assets/eva_arrow-ios-back.png")} />
+          <Ionicons name="chevron-forward" size={20} color="black" />
         </TouchableOpacity>
       </View>
       <View style={styles.chngePasswdView}>
@@ -38,15 +37,13 @@ const SettingsScreen = ({ navigation }) => {
           style={styles.chngePasswd}
           onPress={() => navigation.navigate("Editprofile")}
         >
-          <Image source={require("../assets/gg_profile.png")} />
+          <FontAwesome5 name="user-circle" size={24} color="black" />
           <Text style={styles.EditProfileText}>Edit Profile</Text>
-          <Image source={require("../assets/eva_arrow-ios-back.png")} />
+          <Ionicons name="chevron-forward" size={20} color="black" />
         </TouchableOpacity>
       </View>
       <View style={styles.PrefrencesView}>
-        <Text style={{ paddingLeft: 15, fontSize: 26, fontWeight: "500" }}>
-          Prefrences
-        </Text>
+        <Text style={styles.Prefrencestext}>Prefrences</Text>
       </View>
 
       <View style={styles.chngePasswdView}>
@@ -54,9 +51,9 @@ const SettingsScreen = ({ navigation }) => {
           style={styles.chngePasswd}
           onPress={() => navigation.navigate("login")}
         >
-          <Image source={require("../assets/ant-design_logout-outlined.png")} />
+          <AntDesign name="logout" size={22} color="black" />
           <Text style={styles.LogoutText}>Logout</Text>
-          <Image source={require("../assets/eva_arrow-ios-back.png")} />
+          <Ionicons name="chevron-forward" size={20} color="black" />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -72,56 +69,79 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingTop: 22,
   },
-  headerImage: {
-    height: 32,
-    width: 29,
-  },
+
   headerText: {
-    paddingLeft: 100,
+    paddingLeft: 110,
     fontSize: 20,
-    fontWeight: "500",
+    fontWeight: "400",
     paddingBottom: 55,
+    lineHeight: 30,
+    textAlign: "center",
   },
 
   AccountsTitleText: {
-    paddingLeft: 15,
-    fontSize: 26,
-    fontWeight: "500",
+    paddingLeft: 21,
+    fontSize: 16,
+    fontWeight: "400",
+    lineHeight: 16,
   },
 
   chngePasswdView: {
     justifyContent: "center",
-    marginHorizontal: 12,
+    marginHorizontal: 35,
     borderRadius: 15,
-    borderWidth: 1,
     paddingLeft: 10,
     height: 50,
-    marginTop: 20,
+    marginTop: 10,
     fontSize: 18,
-    borderColor: "lightgrey",
+    backgroundColor: "white",
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowColor: "grey",
+    shadowOpacity: 0.15,
+    shadowRadius: 5,
+    elevation: 5,
   },
   chngePasswd: {
     paddingLeft: 10,
     alignItems: "center",
-    // justifyContent: "space-evenly",
     flexDirection: "row",
   },
   chanPasswodText: {
     fontSize: 12,
-    paddingRight: 160,
+    paddingRight: 120,
     paddingLeft: 12,
+    lineHeight: 12,
+    fontWeight: "400",
+    letterSpacing: -1,
   },
   EditProfileText: {
     fontSize: 12,
-    paddingRight: 200,
+    paddingRight: 160,
     paddingLeft: 12,
+    lineHeight: 12,
+    fontWeight: "400",
+    letterSpacing: -1,
   },
   PrefrencesView: {
     paddingTop: 105,
   },
+  Prefrencestext: {
+    paddingLeft: 21,
+    fontSize: 16,
+    lineHeight: 16,
+    fontWeight: "400",
+    letterSpacing: -1,
+    paddingBottom: 15,
+  },
   LogoutText: {
     fontSize: 12,
-    paddingRight: 225,
+    paddingRight: 185,
     paddingLeft: 12,
+    lineHeight: 12,
+    fontWeight: "400",
+    letterSpacing: -1,
   },
 });
