@@ -6,6 +6,8 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+
 import React from "react";
 
 const ChangePasswordScreen = ({ navigation }) => {
@@ -13,12 +15,12 @@ const ChangePasswordScreen = ({ navigation }) => {
     <SafeAreaView>
       <View style={styles.headerView}>
         <TouchableOpacity onPress={() => navigation.navigate("setting")}>
-          <Image
-            style={styles.TouchableOpacity}
-            source={require("../assets/eva_arrow-back-outline.png")}
-          />
+          <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
         <Text style={styles.headerText}>Change Password</Text>
+      </View>
+      <View>
+        <Text style={styles.checkEmailText}>Check Your Email</Text>
       </View>
       <View style={styles.AllertText}>
         <Text style={styles.Text}>
@@ -29,7 +31,7 @@ const ChangePasswordScreen = ({ navigation }) => {
       <View style={styles.ImageView}>
         <Image source={require("../assets/Illustration.png")} />
       </View>
-      <View style={{ paddingTop: 125 }}>
+      <View style={{ paddingTop: 60 }}>
         <TouchableOpacity
           onPress={() => navigation.navigate("OTP")}
           style={[styles.button]}
@@ -57,13 +59,20 @@ const styles = StyleSheet.create({
   },
   headerText: {
     paddingLeft: 65,
-    fontSize: 20,
-    fontWeight: "500",
-    paddingBottom: 55,
+    fontSize: 22,
+    fontWeight: "400",
+    paddingBottom: 30,
+    lineHeight: 22,
+    letterSpacing: -1,
+  },
+  checkEmailText: {
+    fontSize: 32,
+    fontWeight: "400",
+    textAlign: "center",
+    lineHeight: 48,
+    paddingBottom: 20,
   },
   AllertText: {
-    height: 44,
-    width: 333,
     paddingHorizontal: 21,
   },
   Text: {
@@ -71,6 +80,7 @@ const styles = StyleSheet.create({
     fontSize: 14.48,
     fontWeight: "400",
     paddingLeft: 12,
+    textAlign: "center",
   },
   ImageView: {
     height: 327.12,
@@ -82,8 +92,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: 50,
-    marginHorizontal: 47,
+    marginHorizontal: 66,
     borderRadius: 41,
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowColor: "grey",
+    shadowOpacity: 0.15,
+    shadowRadius: 5,
+    elevation: 5,
   },
   buttonText: {
     fontSize: 16,
