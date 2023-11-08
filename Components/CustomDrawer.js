@@ -4,7 +4,13 @@ import {
   DrawerContentScrollView,
   DrawerItemList,
 } from "@react-navigation/drawer";
-import { AntDesign } from "@expo/vector-icons";
+import {
+  AntDesign,
+  FontAwesome,
+  FontAwesome5,
+  Feather,
+  Ionicons,
+} from "@expo/vector-icons";
 const CustomDrawer = (props) => {
   return (
     <View style={{ flex: 1 }}>
@@ -23,9 +29,7 @@ const CustomDrawer = (props) => {
         <View style={{ paddingLeft: 12, paddingTop: 20 }}>
           <TouchableOpacity onPress={() => props.navigation.navigate("FAQ")}>
             <View style={{ flexDirection: "row" }}>
-              <Image
-                source={require("../assets/radix-icons_question-mark-circled.png")}
-              />
+              <FontAwesome5 name="question-circle" size={24} color="black" />
               <Text style={{ paddingLeft: 12, paddingTop: 3 }}>
                 Frequently Asked Questions
               </Text>
@@ -37,7 +41,7 @@ const CustomDrawer = (props) => {
             onPress={() => props.navigation.navigate("Terrance")}
           >
             <View style={{ flexDirection: "row" }}>
-              <Image source={require("../assets/system-uicons_support.png")} />
+              <FontAwesome name="support" size={24} color="black" />
               <Text style={{ paddingLeft: 12, paddingTop: 3 }}>
                 Talk to Terrance
               </Text>
@@ -47,7 +51,7 @@ const CustomDrawer = (props) => {
         <View style={{ paddingLeft: 12, paddingTop: 20 }}>
           <TouchableOpacity onPress={() => props.navigation.navigate("share")}>
             <View style={{ flexDirection: "row" }}>
-              <Image source={require("../assets/carbon_share.png")} />
+              <Feather name="share-2" size={24} color="black" />
               <Text style={{ paddingLeft: 12, paddingTop: 3 }}>Share</Text>
             </View>
           </TouchableOpacity>
@@ -67,7 +71,7 @@ const CustomDrawer = (props) => {
             onPress={() => props.navigation.navigate("setting")}
           >
             <View style={{ flexDirection: "row" }}>
-              <Image source={require("../assets/cil_settings.png")} />
+              <Ionicons name="md-settings-outline" size={24} color="black" />
               <Text style={{ paddingLeft: 12, paddingTop: 3 }}>Settings</Text>
             </View>
           </TouchableOpacity>
