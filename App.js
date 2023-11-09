@@ -22,17 +22,6 @@ import FAQsScreen from "./Screens/FAQsScreen";
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <SettingsScreen /> */}
-      {/* <EditProfileScreen /> */}
-      {/* <DashboardSCreen /> */}
-      {/* <AddTransactionsScreen /> */}
-      {/* <IncomeExpensesScreen /> */}
-      {/* <AccountsScreen /> */}
-      {/* <ProfileScreen /> */}
-      {/* <AllocateYourFriend /> */}
-      {/* <TalkToTerrance /> */}
-      {/* <ContactSupportScreen /> */}
-      {/* <FAQsScreen /> */}
       <NavigationContainer>
         <Navigation />
 
