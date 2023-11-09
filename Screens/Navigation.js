@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import "react-native-gesture-handler";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 import SplashScreen from "./SplashScreen";
@@ -117,9 +117,10 @@ function MyDrawer() {
         component={AccountsScreen}
         options={{
           drawerIcon: ({ color }) => (
-            <Image
-              source={require("../assets/clarity_walletline1.png")}
-              color={color}
+            <MaterialCommunityIcons
+              name="wallet-outline"
+              size={24}
+              color="black"
             />
           ),
         }}
