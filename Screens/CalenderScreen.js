@@ -29,8 +29,11 @@ const CalenderScreen = ({ navigation }) => {
     const year = date.toString("yyyy");
 
     const Month = () => {
-      // Add functionality for month press here
       console.log("Month pressed");
+    };
+
+    const Year = () => {
+      console.log("Year pressed");
     };
 
     return (
@@ -40,7 +43,8 @@ const CalenderScreen = ({ navigation }) => {
             <Text style={styles.monthText}>{month}</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.yearButton}>
+
+        <TouchableOpacity onPress={Year} style={styles.yearButton}>
           <View style={styles.yearView}>
             <Text style={styles.yearText}>{year}</Text>
           </View>
@@ -122,8 +126,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginHorizontal: 17,
     marginTop: 90,
-    borderRadius: 5,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
     height: "70%",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "black",
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+    elevation: 5,
   },
   bottomDateView: {
     marginTop: 32,
@@ -149,6 +162,14 @@ const styles = StyleSheet.create({
     borderRadius: 31,
     borderWidth: 1,
     borderColor: "#FFD700",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "black",
+    shadowOpacity: 0.25,
+    shadowRadius: 3,
+    elevation: 3,
   },
   bottomNext: {
     backgroundColor: "white",
@@ -161,6 +182,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginLeft: 80,
     borderColor: "#FFD700",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "black",
+    shadowOpacity: 0.25,
+    shadowRadius: 3,
+    elevation: 3,
   },
   customDay: {
     justifyContent: "center",
