@@ -12,7 +12,7 @@ import Swiper from "react-native-swiper";
 const ExpensesFlow = ({ navigation }) => {
   const [screen, setScreen] = useState(0);
   // console.log("screen", screen);
-
+  let txt = "GYM Membership";
   const nextButtons = () => {
     if (screen >= 0 && screen < 7) {
       setScreen(() => screen + 1);
@@ -52,6 +52,7 @@ const ExpensesFlow = ({ navigation }) => {
             <Image
               style={styles.Image}
               source={require("../assets/undraw_educatio.jpg")}
+              resizeMode={"cover"}
             />
             <Text style={[styles.title]}>
               Tap an item to add any regular education
@@ -75,6 +76,7 @@ const ExpensesFlow = ({ navigation }) => {
               <Image
                 style={[styles.PlusImage]}
                 source={require("../assets/charm_plus.png")}
+                resizeMode={"cover"}
               />
             </TouchableOpacity>
           </View>
@@ -86,6 +88,7 @@ const ExpensesFlow = ({ navigation }) => {
             <Image
               style={styles.Image}
               source={require("../assets/undraw_order_a_car_-3-tww.png")}
+              resizeMode={"cover"}
             />
             <Text style={[styles.title]}>
               Tap an item to add any regular Transportation
@@ -115,6 +118,7 @@ const ExpensesFlow = ({ navigation }) => {
               <Image
                 style={[styles.PlusImage]}
                 source={require("../assets/charm_plus.png")}
+                resizeMode={"cover"}
               />
             </TouchableOpacity>
           </View>
@@ -128,6 +132,7 @@ const ExpensesFlow = ({ navigation }) => {
             <Image
               style={styles.Image}
               source={require("../assets/undraw_children_re_c37f.png")}
+              resizeMode={"cover"}
             />
             <Text style={[styles.title]}>
               Tap an item to add any regular kids
@@ -153,6 +158,7 @@ const ExpensesFlow = ({ navigation }) => {
                 <Image
                   style={[styles.PlusImage]}
                   source={require("../assets/charm_plus.png")}
+                  resizeMode={"cover"}
                 />
               </TouchableOpacity>
             </View>
@@ -166,6 +172,7 @@ const ExpensesFlow = ({ navigation }) => {
             <Image
               style={styles.Image}
               source={require("../assets/undraw_personal_training_0dqn.png")}
+              resizeMode={"cover"}
             />
             <Text style={[styles.title]}>
               Tap an item to add any health related
@@ -175,7 +182,13 @@ const ExpensesFlow = ({ navigation }) => {
           <View style={[styles.expensesView]}>
             <View>
               <TouchableOpacity style={[styles.expenses]}>
-                <Text style={[styles.expensesText]}>GYM Membership</Text>
+                <Text
+                  numberOfLines={2}
+                  ellipsizeMode="tail"
+                  style={[styles.expensesText]}
+                >
+                  {`${txt.substring(0, 8)}...`}
+                </Text>
               </TouchableOpacity>
 
               <TouchableOpacity style={[styles.expenses]}>
@@ -192,6 +205,7 @@ const ExpensesFlow = ({ navigation }) => {
               <Image
                 style={[styles.PlusImage]}
                 source={require("../assets/charm_plus.png")}
+                resizeMode={"cover"}
               />
             </TouchableOpacity>
           </View>
@@ -203,6 +217,7 @@ const ExpensesFlow = ({ navigation }) => {
             <Image
               style={styles.Image}
               source={require("../assets/undraw_election_day_w842.png")}
+              resizeMode={"cover"}
             />
             <Text style={[styles.title]}>
               Tap an item to add any regular bills &
@@ -238,6 +253,7 @@ const ExpensesFlow = ({ navigation }) => {
               <Image
                 style={[styles.PlusImage]}
                 source={require("../assets/charm_plus.png")}
+                resizeMode={"cover"}
               />
             </TouchableOpacity>
           </View>
@@ -249,6 +265,7 @@ const ExpensesFlow = ({ navigation }) => {
             <Image
               style={styles.Image}
               source={require("../assets/undraw_subscriptions_re_k7jj1.png")}
+              resizeMode={"cover"}
             />
             <Text style={[styles.title]}>Tap an item to add any regular</Text>
             <Text style={[styles.title]}>subscriptions</Text>
@@ -282,6 +299,7 @@ const ExpensesFlow = ({ navigation }) => {
               <Image
                 style={[styles.PlusImage]}
                 source={require("../assets/charm_plus.png")}
+                resizeMode={"cover"}
               />
             </TouchableOpacity>
           </View>
@@ -293,6 +311,7 @@ const ExpensesFlow = ({ navigation }) => {
             <Image
               style={styles.Image}
               source={require("../assets/undraw_credit_card_payment_re_o911.png")}
+              resizeMode={"cover"}
             />
             <Text style={[styles.title]}>
               Tap an item to add any regular housing{" "}
@@ -322,6 +341,7 @@ const ExpensesFlow = ({ navigation }) => {
               <Image
                 style={[styles.PlusImage]}
                 source={require("../assets/charm_plus.png")}
+                resizeMode={"cover"}
               />
             </TouchableOpacity>
           </View>
@@ -334,6 +354,7 @@ const ExpensesFlow = ({ navigation }) => {
             <Image
               style={styles.Image}
               source={require("../assets/undraw_online_organizer_re_156n.png")}
+              resizeMode={"cover"}
             />
             <Text style={[styles.title]}>
               Want new shoes? Planning a vacation?
@@ -368,6 +389,7 @@ const ExpensesFlow = ({ navigation }) => {
               <Image
                 style={[styles.PlusImage]}
                 source={require("../assets/charm_plus.png")}
+                resizeMode={"cover"}
               />
             </TouchableOpacity>
           </View>
@@ -391,11 +413,9 @@ const styles = StyleSheet.create({
     marginBottom: 22,
   },
   ImageView: {
-    flex: 0.8,
+    // flex: 0.8,
   },
   Image: {
-    height: 215,
-    width: 262,
     alignSelf: "center",
     marginBottom: 50,
     marginTop: 55,
@@ -429,6 +449,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "white",
     fontWeight: "500",
+    // paddingHorizontal: 10,
   },
   PlusImageView: {
     backgroundColor: "white",
@@ -458,7 +479,15 @@ const styles = StyleSheet.create({
     width: 90,
     marginTop: 45,
     borderRadius: 31,
-    borderWidth: 1,
+    // borderWidth: 1,
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "black",
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+    elevation: 5,
   },
 
   bottomNext: {
@@ -470,7 +499,16 @@ const styles = StyleSheet.create({
     marginTop: 45,
     backgroundColor: "#FFD700",
     borderRadius: 31,
-    borderWidth: 1,
+    // borderWidth: 1,
+
     marginLeft: 110,
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowColor: "black",
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+    elevation: 5,
   },
 });
