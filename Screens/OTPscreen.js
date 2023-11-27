@@ -5,9 +5,9 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Image,
+  TextInput,
 } from "react-native";
 import React from "react";
-// import OtpInputs from "react-native-otp-inputs";
 
 const OTPscreen = ({ navigation }) => {
   return (
@@ -20,13 +20,30 @@ const OTPscreen = ({ navigation }) => {
           Enter the Verification Code we Just Send You To Your Email Address
         </Text>
       </View>
-      <View>
-        {/* <OtpInputs
-          handleChange={(code) => console.log(code)}
-          numberOfInputs={6}
-        /> */}
+      <View
+        style={{
+          alignSelf: "center",
+          padding: 20,
+          flexDirection: "row",
+        }}
+      >
+        <TouchableOpacity style={styles.OTPblacks}>
+          <TextInput style={styles.InputContainer} keyboardType="numeric" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.OTPblacks}>
+          <TextInput style={styles.InputContainer} keyboardType="numeric" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.OTPblacks}>
+          <TextInput style={styles.InputContainer} keyboardType="numeric" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.OTPblacks}>
+          <TextInput style={styles.InputContainer} keyboardType="numeric" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.OTPblacks}>
+          <TextInput style={styles.InputContainer} keyboardType="numeric" />
+        </TouchableOpacity>
       </View>
-      <View style={{ paddingTop: 125 }}>
+      <View style={{ paddingTop: 30 }}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Confirm")}
           style={[styles.button]}
@@ -77,8 +94,22 @@ const styles = StyleSheet.create({
     lineHeight: 21.72,
     fontSize: 14.48,
     fontWeight: "400",
-    // paddingLeft: 12,
     textAlign: "center",
+  },
+  InputContainer: {
+    height: 30,
+    width: 40,
+    fontSize: 22,
+    fontWeight: "600",
+  },
+  OTPblacks: {
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 0.91,
+    borderRadius: 7.3,
+    height: 49.28,
+    width: 49.28,
+    marginLeft: 15,
   },
   button: {
     backgroundColor: "#FFD700",
