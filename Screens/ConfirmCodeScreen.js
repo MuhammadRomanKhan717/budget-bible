@@ -5,10 +5,22 @@ import {
   SafeAreaView,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from "react-native";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const ConfirmCodeScreen = ({ navigation }) => {
+  const [f1, setF1] = useState("");
+  const [f2, setF2] = useState("");
+  const PasswordValidate = () => {
+    let password = f1;
+    let conformPassword = f2;
+    if (conformPassword == password) {
+      navigation.navigate("ResetPswd");
+    } else {
+      Alert.alert("Password not maching ");
+    }
+  };
   return (
     <SafeAreaView>
       <View style={styles.headerView}>
@@ -23,6 +35,11 @@ const ConfirmCodeScreen = ({ navigation }) => {
             autoCorrect={false}
             keyboardType="default"
             placeholderTextColor="#000000"
+            secureTextEntry={true}
+            maxLength={12}
+            onChangeText={(txt) => {
+              setF1(txt);
+            }}
           />
         </View>
         <View style={styles.inputView}>
@@ -33,13 +50,18 @@ const ConfirmCodeScreen = ({ navigation }) => {
             autoCorrect={false}
             keyboardType="default"
             placeholderTextColor="#000000"
+            secureTextEntry={true}
+            maxLength={12}
+            onChangeText={(txt) => {
+              setF2(txt);
+            }}
           />
         </View>
       </View>
 
       <View style={{ paddingTop: 125 }}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("ResetPswd")}
+          onPress={() => PasswordValidate()}
           style={[styles.button]}
         >
           <Text style={[styles.buttonText]}>Change Password</Text>
