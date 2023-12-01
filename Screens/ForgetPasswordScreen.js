@@ -5,14 +5,19 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Image,
+  phoneInput
 } from "react-native";
 import { CountryPicker } from "react-native-country-codes-picker";
 import { Entypo } from "@expo/vector-icons";
-import { useState } from "react";
+import { useState,useRef } from "react";
+import PhoneInput from "react-native-phone-number-input";
 
 const ForgetPasswordScreen = ({ navigation }) => {
   const [show, setShow] = useState(false);
-  const [countryCode, setCountryCode] = useState("");
+  const [value, setValue] = useState("");
+  const [formattedValue, setFormattedValue] = useState("");
+  const [valid, setValid] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
   return (
     <SafeAreaView>
       <View style={styles.headerView}>
@@ -35,42 +40,45 @@ const ForgetPasswordScreen = ({ navigation }) => {
         </Text>
       </View>
       <View style={styles.pickerView}>
-        <TouchableOpacity
-          onPress={() => setShow(true)}
-          style={{
-            width: "80%",
-            height: 60,
-            backgroundColor: "white",
-            borderRadius: 10,
-            padding: 10,
-            shadowOffset: {
-              width: 0,
-              height: 5,
-            },
-            shadowColor: "grey",
-            shadowOpacity: 0.22,
-            shadowRadius: 5,
-            elevation: 5,
-          }}
-        >
-          <Text
-            style={{
-              color: "black",
-              fontSize: 20,
+      <>
+    
+      <View style={styles.container}>
+        <SafeAreaView style={styles.wrapper}>
+          {showMessage && (
+            <View style={styles.message}>
+              <Text>Value : {value}</Text>
+              <Text>Formatted Value : {formattedValue}</Text>
+              <Text>Valid : {valid ? "true" : "false"}</Text>
+            </View>
+          )}
+          <PhoneInput 
+          style={styles.phoneInput}
+            ref={phoneInput}
+            defaultValue={value}
+            defaultCode="DM"
+            layout="first"
+            onChangeText={(text) => {
+              setValue(text);
             }}
-          >
-            {countryCode}
-          </Text>
+            onChangeFormattedText={(text) => {
+              setFormattedValue(text);
+            }}
+            withDarkTheme
+            withShadow
+            autoFocus
+          />
+         
+        </SafeAreaView>
+      </View>
+    </>
+      </View>
+      <View style={{ paddingTop: "25%" }}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("ConfirmPhoneNumber")}
+          style={[styles.button]}
+        >
+          <Text style={[styles.buttonText]}>Confirm</Text>
         </TouchableOpacity>
-
-        <CountryPicker
-          show={show}
-          // when picker button press you will get the country object with dial code
-          pickerButtonOnPress={(item) => {
-            setCountryCode(item.dial_code);
-            setShow(false);
-          }}
-        />
       </View>
     </SafeAreaView>
   );
@@ -85,7 +93,7 @@ const styles = StyleSheet.create({
   },
 
   headerText: {
-    paddingLeft: 50,
+    paddingLeft: "15%",
     fontSize: 18,
     fontWeight: "600",
     lineHeight: 27,
@@ -107,8 +115,31 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     lineHeight: 18,
     letterSpacing: -1,
+    paddingBottom:15
   },
   pickerView: {
     alignItems: "center",
+  },
+  container:{
+
+  },
+  wrapper:{
+   
+  },
+   button: {
+    backgroundColor: "black",
+    justifyContent: "center",
+    alignItems: "center",
+    height: 56.43,
+    marginHorizontal: 55,
+    borderRadius: 41,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: "400",
+    color: "white",
+    alignItems: "center",
+    lineHeight: 18,
+    
   },
 });

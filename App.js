@@ -27,6 +27,7 @@ export default function App() {
 
         <StatusBar style="auto" />
       </NavigationContainer>
+
     </View>
   );
 }
