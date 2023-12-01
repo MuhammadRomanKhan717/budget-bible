@@ -31,7 +31,7 @@ const ConfirmphoneNoScreen = ({navigation}) => {
         let otp = "1234";
         let enteredOtp = f1 + f2 + f3 + f4;
         if (enteredOtp == otp) {
-            Alert.alert("correct OTP ");
+           navigation.navigate("ChangePasswor2")
         } else {
           Alert.alert("Wrrong OTP ");
         }
