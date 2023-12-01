@@ -31,6 +31,7 @@ import ShareScreen from "./ShareScreen";
 import CalenderScreen from "./CalenderScreen";
 import ConfirmphoneNoScreen from "./ConfirmphoneNoScreen";
 import ChangeYouPassword2 from "./ChangeYouPassword2";
+import PasswordChangedScreen from "./PasswordChangedScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -170,6 +171,7 @@ const Navigation = () => {
       <Stack.Screen name="Forget" component={ForgetPasswordScreen} />
       <Stack.Screen name="ConfirmPhoneNumber" component={ConfirmphoneNoScreen} />
       <Stack.Screen name="ChangePasswor2" component={ChangeYouPassword2} />
+      <Stack.Screen name="changedpassword" component={PasswordChangedScreen} />
       {/* <Stack.Screen name="profile" component={ProfileScreen} /> */}
       <Stack.Screen name="setting" component={SettingsScreen} />
       <Stack.Screen name="Editprofile" component={EditProfileScreen} />

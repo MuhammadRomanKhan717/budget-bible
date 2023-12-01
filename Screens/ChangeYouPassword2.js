@@ -1,9 +1,21 @@
-import { StyleSheet, Text, View ,SafeAreaView,TouchableOpacity,Image,TextInput} from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View ,SafeAreaView,TouchableOpacity,Image,TextInput,Alert} from 'react-native'
 import { Entypo } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
+import React, { useState } from "react";
 
-const ChangeYouPassword2 = () => {
+const ChangeYouPassword2 = ({navigation}) => {
+    const [f1, setF1] = useState("");
+        const [f2, setF2] = useState("");
+    const PasswordValidate = () => {
+        
+        let password = f1;
+        let conformPassword = f2;
+        if (conformPassword == password) {
+            navigation.navigate("changedpassword")
+        } else {
+          Alert.alert("Password not maching ");
+        }
+      };
   return (
     <SafeAreaView>
             <View style={styles.headerView}>
@@ -24,7 +36,7 @@ const ChangeYouPassword2 = () => {
               style={styles.input}
               autoCapitalize="none"
               autoCorrect={false}
-              secureTextEntry={true}
+              secureTextEntry={false}
               keyboardType="numbers-and-punctuation"
             />
           </View>
@@ -35,8 +47,12 @@ const ChangeYouPassword2 = () => {
               style={styles.input}
               autoCapitalize="none"
               autoCorrect={false}
-              secureTextEntry={true}
+              secureTextEntry={false}
               keyboardType="numbers-and-punctuation"
+              maxLength={12}
+              onChangeText={(txt) => {
+                setF1(txt);
+              }}
             />
           </View>
           <View style={styles.inputView}>
@@ -46,13 +62,17 @@ const ChangeYouPassword2 = () => {
               style={styles.input}
               autoCapitalize="none"
               autoCorrect={false}
-              secureTextEntry={true}
+              secureTextEntry={false}
               keyboardType="numbers-and-punctuation"
+              maxLength={12}
+              onChangeText={(txt) => {
+                setF2(txt);
+              }}
             />
           </View>
           <View style={{ paddingTop: "10%" }}>
         <TouchableOpacity
-         
+          onPress={() => PasswordValidate()}
           style={[styles.button]}
         >
           <Text style={[styles.buttonText]}>Confirm</Text>
