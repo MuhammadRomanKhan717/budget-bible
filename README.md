@@ -23,3 +23,54 @@ git clone: https://github.com/MuhammadRomanKhan717/budget-bible
 ### Install Dependencies:
 yarn install
 Run the App:  yarn start
+## File Structure
+* assets
+* Components
+  * AccountDetail
+  * CustomDrawer
+  * ExpensesComponent
+  * 
+* Screens
+   * AccountsScreen
+   *  AddTransactionsScreen
+   *  AllocateYourFriend
+   *  CalenderScreen
+   *  ChangePasswordScreen
+   *  ChangeYouPassword2
+   *  ConfirmCodeScreen
+   *  ConfirmphoneNoScreen
+   *  ContactSupportScreen
+   *  DashboardSCreen
+   *  EditProfileScreen
+   *  ExpensesFlow
+   *  FAQsScreen
+   *   ForgetPasswordScreen
+   *   IncomeExpensesScreen
+   *   loginscreen
+   *   Navigation
+   *   OnboardingScreen
+   *  OTPscreen
+
+     
+## How to run the app?
+1. clone the code
+2. Open in Vs code 
+   1. Open Vs code Terminal and run:  
+   `yarn install`
+   2. When installing node_modules run  
+      `yarn start`
+3. Open the expo app on your mobile and scan the QR code to run the app.
+   
+## App Screenshot
+When the App is open the Splash screen appears.
+<table>
+ <tr>
+  <td>Simple splash screen </td>
+ </tr>
+ <tr>
+
+   <td> <img src="" alt="Drawing"  width="150" height="300"/> </td>
+   
+</tr>
+</table>
+ 
