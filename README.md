@@ -78,9 +78,10 @@ When the App is open the Splash screen appears.
    These screens appear only one time. When running the app 1st time.
    <table>
  <tr>
-  <td>Onboard first screen</td>
-   <td>Onboard second screen</td>
-     <td>Onboard third screen</td>
+  <td>Onboard 1st screen</td>
+   <td>Onboard 2nd screen</td>
+     <td>Onboard 3rd screen</td>
+   <td>Onboard 4th screen</td>
  </tr>
    <tr>
         <td> <img src="https://github.com/MuhammadRomanKhan717/budget-bible/assets/86658178/43592015-6ba8-4e35-bded-8f6c9e79f2a8" alt="Drawing"  width="150" height="300"/> </td>
