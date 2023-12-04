@@ -67,20 +67,20 @@ const styles = StyleSheet.create({
     paddingLeft: 8,
     // backgroundColor: "red",
     flexDirection: "row",
-    paddingTop: 22,
+    paddingTop: "3%",
   },
 
   headerText: {
-    paddingLeft: 110,
+    paddingLeft: "30%",
     fontSize: 20,
     fontWeight: "400",
-    paddingBottom: 55,
+    paddingBottom: "12%",
     lineHeight: 30,
     textAlign: "center",
   },
 
   AccountsTitleText: {
-    paddingLeft: 21,
+    paddingLeft: "7%",
     fontSize: 16,
     fontWeight: "400",
     lineHeight: 16,
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     letterSpacing: -1,
   },
   PrefrencesView: {
-    paddingTop: 105,
+    paddingTop: "30%",
   },
   Prefrencestext: {
     paddingLeft: 21,

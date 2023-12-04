@@ -67,7 +67,7 @@ const CalenderScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View style={styles.headerView}>
-        <TouchableOpacity onPress={() => navigation.navigate("")}>
+        <TouchableOpacity onPress={() => navigation.navigate("allocateTourFunds")}>
           <Image
             style={styles.headerImage}
             source={require("../assets/eva_arrow-ios-back-fill.png")}
@@ -90,7 +90,8 @@ const CalenderScreen = ({ navigation }) => {
           <Text style={styles.bottomDateText}>September-10-2022</Text>
         </View>
         <View style={styles.bottomView}>
-          <TouchableOpacity style={styles.bottomBack}>
+          <TouchableOpacity style={styles.bottomBack}
+          onPress={() => navigation.navigate("allocateTourFunds")}>
             <Text>Back</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.bottomNext}>

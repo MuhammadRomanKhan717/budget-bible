@@ -67,7 +67,7 @@ const ProfileScreen = ({ props }) => {
         <View style={styles.perefrencesView}>
           <TouchableOpacity
             style={styles.perefrencesText}
-            onPress={() => navigation.navigate("OnboardingScreen")}
+            onPress={() => navigation.navigate("login")}
           >
             <Text style={styles.inputText}>Log out</Text>
             <Ionicons name="chevron-forward" size={24} color="grey" />
