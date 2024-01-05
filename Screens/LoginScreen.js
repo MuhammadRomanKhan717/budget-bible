@@ -8,14 +8,33 @@ import {
   SafeAreaView,
   Button,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
+import { useState } from "react";
 
 const LoginScreen = ({ navigation }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignIn = () => {
+    // Basic validation
+    if (!email.trim() || !password.trim()) {
+      alert("Please enter both email and password");
+      return;
+    }
+
+    // Add more sophisticated validation if needed
+
+    // If validation passes, navigate to "expenses" screen
+    navigation.navigate("expenses");
+  };
+
   return (
-    <KeyboardAvoidingView
+  <ScrollView>
+      <KeyboardAvoidingView
       style={styles.mainView}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
@@ -40,6 +59,8 @@ const LoginScreen = ({ navigation }) => {
               autoCapitalize="none"
               autoCorrect={false}
               keyboardType="email-address"
+              value={email}
+              onChangeText={(text) => setEmail(text)}
             />
           </View>
           <View style={styles.inputView}>
@@ -51,6 +72,8 @@ const LoginScreen = ({ navigation }) => {
               autoCorrect={false}
               secureTextEntry={true}
               keyboardType="numbers-and-punctuation"
+              value={password}
+              onChangeText={(text) => setPassword(text)}
             />
           </View>
           <View style={styles.frgtPasword}>
@@ -61,12 +84,9 @@ const LoginScreen = ({ navigation }) => {
               <Text style={[styles.pawdText]}> Forget Password?</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            style={[styles.button]}
-            onPress={() => navigation.navigate("expenses")}
-          >
-            <Text style={[styles.buttonText]}>Sign in</Text>
-          </TouchableOpacity>
+          <TouchableOpacity style={[styles.button]} onPress={handleSignIn}>
+        <Text style={[styles.buttonText]}>Sign in</Text>
+      </TouchableOpacity>
 
           <View style={[styles.orYouSign]}>
             <View
@@ -111,6 +131,7 @@ const LoginScreen = ({ navigation }) => {
         </View>
       </SafeAreaView>
     </KeyboardAvoidingView>
+  </ScrollView>
   );
 };
 
