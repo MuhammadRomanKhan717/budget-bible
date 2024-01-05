@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
+import * as Sharing from "expo-sharing";
 import {
   DrawerContentScrollView,
   DrawerItemList,
@@ -11,8 +12,16 @@ import {
   Feather,
   Ionicons,
 } from "@expo/vector-icons";
+const onSharePress = async () => {
+  try {
+    await Sharing.shareAsync("");
+  } catch (error) {
+    console.error("Sharing failed with error: ", error);
+  }
+};
 const CustomDrawer = (props) => {
   return (
+    
     <View style={{ flex: 1 }}>
       <View style={{ height: "20%" }}>
         <View style={{ justifyContent: "center", paddingTop: 70 }}>
@@ -49,7 +58,7 @@ const CustomDrawer = (props) => {
           </TouchableOpacity>
         </View>
         <View style={{ paddingLeft: 12, paddingTop: 20 }}>
-          <TouchableOpacity onPress={() => props.navigation.navigate("share")}>
+          <TouchableOpacity onPress={onSharePress}>
             <View style={{ flexDirection: "row" }}>
               <Feather name="share-2" size={24} color="black" />
               <Text style={{ paddingLeft: 12, paddingTop: 3 }}>Share</Text>
