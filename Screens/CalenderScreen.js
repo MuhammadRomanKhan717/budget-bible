@@ -5,13 +5,16 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Image,
+  Modal
 } from "react-native";
 import React, { useState } from "react";
 import { Calendar } from "react-native-calendars";
 
 const CalenderScreen = ({ navigation }) => {
   const [selectedDate, setSelectedDate] = useState("");
-
+  const [selectedMonth, setSelectedMonth] = useState("");
+  const [selectedYear, setSelectedYear] = useState("");
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const onDayPress = (day) => {
     setSelectedDate(day.dateString);
   };
@@ -28,27 +31,60 @@ const CalenderScreen = ({ navigation }) => {
     const month = date.toString("MMMM ");
     const year = date.toString("yyyy");
 
+    // const Month = () => {
+    //   console.log("Month pressed");
+    // };
     const Month = () => {
-      console.log("Month pressed");
+      setSelectedMonth(month);
+      setIsModalVisible(true);
     };
 
+    // const Year = () => {
+    //   console.log("Year pressed");
+    // };
     const Year = () => {
-      console.log("Year pressed");
+      setSelectedYear(year);
+      setIsModalVisible(true);
     };
 
     return (
       <View style={styles.customHeader}>
-        <TouchableOpacity onPress={Month} style={styles.monthButton}>
-          <View style={styles.monthView}>
-            <Text style={styles.monthText}>{month}</Text>
-          </View>
-        </TouchableOpacity>
+      <TouchableOpacity onPress={Month} style={styles.monthButton}>
+        <View style={styles.monthView}>
+          <Text style={styles.monthText}>{month}</Text>
+        </View>
+      </TouchableOpacity>
 
         <TouchableOpacity onPress={Year} style={styles.yearButton}>
           <View style={styles.yearView}>
             <Text style={styles.yearText}>{year}</Text>
           </View>
         </TouchableOpacity>
+        {/* Modal to display selected month and year */}
+      
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={isModalVisible}
+        >
+            <TouchableOpacity
+              onPress={() => {
+                setIsModalVisible(false);
+                setSelectedMonth("");
+                setSelectedYear("");
+              }}
+              style={{paddingLeft:("20%")}}
+            >
+          <View style={styles.modal}>
+        
+            <Text style={{fontWeight:"800",fontSize:18,color:"red"}}>{selectedMonth}</Text>
+            <Text style={{fontWeight:"800",fontSize:18,color:"red"}}>{selectedYear}</Text>
+           
+           
+          </View>
+          </TouchableOpacity>
+        </Modal>
+       
       </View>
     );
   };
@@ -243,5 +279,24 @@ const styles = StyleSheet.create({
     textMonthFontWeight: "700",
     arrowColor: "black",
     arrowWidth: "40%",
+  },
+  modal: {
+    margin: 50,
+    borderRadius: 5,
+    padding: 35,
+    height:("50%"),
+
+    width:("50%"),
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
+    shadowColor: "black",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 50,
+    elevation: 5,
   },
 });

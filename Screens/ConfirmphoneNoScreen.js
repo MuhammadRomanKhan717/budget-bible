@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View ,SafeAreaView,TouchableOpacity,Image,TextInput,Alert} from 'react-native'
+import { StyleSheet, Text, View ,SafeAreaView,TouchableOpacity,Image,TextInput,Alert, ScrollView} from 'react-native'
 import { Entypo } from "@expo/vector-icons";
 import React, { useEffect, useRef, useState } from "react";
-const ConfirmphoneNoScreen = ({navigation}) => {
+import { useNavigation } from '@react-navigation/native';
+const ConfirmphoneNoScreen = () => {
     const et1 = useRef();
     const et2 = useRef();
     const et3 = useRef();
@@ -36,17 +37,22 @@ const ConfirmphoneNoScreen = ({navigation}) => {
           Alert.alert("Wrrong OTP ");
         }
       };
+      const navigation = useNavigation();
+      const goBack = () => {
+        navigation.goBack();
+      };
   return (
    
     <SafeAreaView>
            <View style={styles.headerView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("allocateTourFunds")}
+       onPress={goBack} 
         >
           <Entypo name="chevron-left" size={26} color="black" />
         </TouchableOpacity>
         <Text style={styles.headerText}>Confirm phone number</Text>
       </View>
+      <ScrollView>
       <View style={styles.imageView}>
         <Image source={require("../assets/bro.png")} />
       </View>
@@ -163,6 +169,7 @@ const ConfirmphoneNoScreen = ({navigation}) => {
           <Text style={[styles.buttonText]}>Confirm</Text>
         </TouchableOpacity>
       </View>
+      </ScrollView>
     </SafeAreaView>
   )
 }

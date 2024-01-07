@@ -2,8 +2,8 @@ import { StyleSheet, Text, View ,SafeAreaView,TouchableOpacity,Image,TextInput,A
 import { Entypo } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import React, { useState } from "react";
-
-const ChangeYouPassword2 = ({navigation}) => {
+import { useNavigation } from '@react-navigation/native';
+const ChangeYouPassword2 = () => {
     const [f1, setF1] = useState("");
         const [f2, setF2] = useState("");
     const PasswordValidate = () => {
@@ -16,11 +16,15 @@ const ChangeYouPassword2 = ({navigation}) => {
           Alert.alert("Password not maching ");
         }
       };
+      const navigation = useNavigation();
+      const goBack = () => {
+        navigation.goBack();
+      };
   return (
     <SafeAreaView>
             <View style={styles.headerView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("allocateTourFunds")}
+             onPress={goBack} 
         >
           <Entypo name="chevron-left" size={26} color="black" />
         </TouchableOpacity>

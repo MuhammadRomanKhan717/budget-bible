@@ -7,22 +7,27 @@ import {
   Image,
   phoneInput
 } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 import { CountryPicker } from "react-native-country-codes-picker";
 import { Entypo } from "@expo/vector-icons";
 import { useState,useRef } from "react";
 import PhoneInput from "react-native-phone-number-input";
 
-const ForgetPasswordScreen = ({ navigation }) => {
+const ForgetPasswordScreen = () => {
   const [show, setShow] = useState(false);
   const [value, setValue] = useState("");
   const [formattedValue, setFormattedValue] = useState("");
   const [valid, setValid] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+  const navigation = useNavigation();
+  const goBack = () => {
+    navigation.goBack();
+  };
   return (
     <SafeAreaView>
       <View style={styles.headerView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("allocateTourFunds")}
+       onPress={goBack} 
         >
           <Entypo name="chevron-left" size={26} color="black" />
         </TouchableOpacity>
