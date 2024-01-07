@@ -11,9 +11,25 @@ import {
 } from "react-native";
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import { UserOutlined } from "@ant-design/icons";
-import React from "react";
+import React, { useState } from "react";
 
 const SignUpScreen = ({ navigation }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const handleSignUp = () => {
+   
+    if (!username || !password || !email) {
+      setErrorMessage("Please fill in all fields");
+    } else if (password.length < 6) {
+      setErrorMessage("Password must be at least 6 characters");
+    } else {
+     
+      setErrorMessage(""); 
+      navigation.navigate("login");
+    }
+  };
   return (
     <KeyboardAvoidingView
       style={styles.mainView}
@@ -36,6 +52,8 @@ const SignUpScreen = ({ navigation }) => {
               autoCapitalize="none"
               autoCorrect={false}
               keyboardType="email-address"
+              value={username}
+              onChangeText={(text) => setUsername(text)}
             />
           </View>
           <View style={styles.inputView}>
@@ -47,6 +65,8 @@ const SignUpScreen = ({ navigation }) => {
               autoCorrect={false}
               secureTextEntry={true}
               keyboardType="numbers-and-punctuation"
+              value={password}
+              onChangeText={(text) => setPassword(text)}
             />
           </View>
           <View style={styles.inputView}>
@@ -61,14 +81,20 @@ const SignUpScreen = ({ navigation }) => {
               autoCapitalize="none"
               autoCorrect={false}
               keyboardType="email-address"
+              value={email}
+        onChangeText={(text) => setEmail(text)}
             />
           </View>
-          <TouchableOpacity
-            style={[styles.button]}
-            onPress={() => navigation.navigate("login")}
-          >
-            <Text style={[styles.buttonText]}>Sign up</Text>
-          </TouchableOpacity>
+          {errorMessage ? (
+        <Text style={{fontSize:18,fontWeight:"600",color:"red",paddingTop:15,paddingLeft:21}}>{errorMessage}</Text>
+      ) : null}
+      <TouchableOpacity
+        style={[styles.button]}
+        onPress={handleSignUp}
+      >
+        <Text style={[styles.buttonText]}>Sign up</Text>
+      </TouchableOpacity>
+     
 
           <View style={[styles.orYouSign]}>
             <View
