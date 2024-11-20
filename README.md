@@ -4,13 +4,13 @@ Budget-Bible is a powerful and user-friendly budgeting app designed to help you 
 ### Intuitive Budgeting: 
 Easily create and customize budgets based on your financial goals and priorities.
 ### Expense Tracking: 
-Keep track of your daily expenses and categorize them for a clear understanding of your spending habits.
+Please keep track of your daily expenses and categorize them to understand your spending habits clearly.
 ### Goal Setting: 
 Set financial goals and monitor your progress over time. Budget-Bible helps you stay motivated on your journey to financial success.
 
 
 ### Interactive Reports:
-Gain insights into your financial patterns with detailed reports and visualizations. Understand where your money goes and make informed decisions.
+With detailed reports and visualizations, you can gain insights into your financial patterns, understand where your money goes, and make informed decisions.
 
 ### Secure and Private: 
 Your financial data is encrypted and securely stored. Budget-Bible prioritizes your privacy and security.
@@ -46,7 +46,7 @@ Run the App:  yarn start
    *  FAQsScreen
    *   ForgetPasswordScreen
    *   IncomeExpensesScreen
-   *   loginscreen
+   *   login screen
    *   Navigation
    *   OnboardingScreen
    *  OTPscreen
